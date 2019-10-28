@@ -6,4 +6,21 @@
     <string name="games">Games</string>
     <string name="cricket">Cricket</string>
     <string name="football">Football</string>
+    <string name="results">Results</string>
+    <string name="score">Score</string>
+    <string name="fixtures">Fixtures</string>
+    <string name="live_matches">Live Matches</string>
+    <string name="hyphen">-</string>
+    <string name="goal_scorers">Goal Scorers</string>
+    <string name="overs">overs</string>
+    <string name="mins">mins</string>
+    <string name="vs">vs</string>
+    <string name="VS">VS</string>
+    <string name="add_fixture">Add Fixture</string>
+    <string name="start">Start</string>
+    <string name="end_match">End Match</string>
+
+
+
+
 </resources>
