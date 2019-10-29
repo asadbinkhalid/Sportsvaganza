@@ -22,6 +22,7 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/football_bg"
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +34,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:addStatesFromChildren="false"
-            android:background="@drawable/football_bg"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
