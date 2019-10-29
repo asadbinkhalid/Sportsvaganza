@@ -32,7 +32,8 @@
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:addStatesFromChildren="false"
+            android:background="@drawable/football_bg"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
@@ -54,20 +55,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="72dp"
-                android:background="@color/white"
+                android:background="@color/transparent"
                 app:fontFamily="@font/roboto"
 
                 app:layout_collapseMode="pin"
                 app:layout_scrollFlags="scroll|enterAlways"
 
+                app:tabBackground="@color/semi_transparent"
                 app:tabGravity="fill"
-                app:tabIndicatorColor="@color/colorPrimary"
+                app:tabIndicatorColor="@color/blue"
                 app:tabInlineLabel="true"
                 app:tabMode="fixed"
-                app:tabPaddingEnd="8dp"
-                app:tabPaddingStart="8dp"
                 app:tabSelectedTextColor="@color/black"
-                app:tabTextColor="@android:color/tertiary_text_dark" />
+                app:tabTextAppearance="@style/TextAppearance.AppCompat.Large"
+                app:tabTextColor="@color/blue" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
