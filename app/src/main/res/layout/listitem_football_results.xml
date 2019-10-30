@@ -5,29 +5,111 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/text123"
+        android:id="@+id/textView_scoreA"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/typer_roboto_bold"
+        android:text="@string/g0"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_hyphen"
+        app:layout_constraintEnd_toStartOf="@+id/textView_hyphen"
+        app:layout_constraintTop_toTopOf="@+id/textView_hyphen" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_scoreB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/typer_roboto_bold"
+        android:text="@string/g1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_hyphen"
+        app:layout_constraintStart_toEndOf="@+id/textView_hyphen"
+        app:layout_constraintTop_toTopOf="@+id/textView_hyphen" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_hyphen"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="text123"
-        android:textSize="24sp"
+        android:fontFamily="@font/typer_roboto_regular"
+        android:text="@string/hyphen"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_teamAName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/teamA"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/textView_hyphen"
+        app:layout_constraintEnd_toStartOf="@id/textView_scoreA"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textView_hyphen"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_matchTime2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:text="@string/match_time1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_hyphen"
+        app:layout_constraintVertical_bias="0.32" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_teamBName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/teamB"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/textView_hyphen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@id/textView_scoreB"
+        app:layout_constraintTop_toTopOf="@id/textView_hyphen"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/match_date2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/match_date1"
+        app:layout_constraintBottom_toBottomOf="@+id/text_matchTime2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toEndOf="@+id/text_matchTime2"
+        app:layout_constraintTop_toTopOf="@+id/text_matchTime2"
         app:layout_constraintVertical_bias="0.0" />
 
     <View
-        android:id="@+id/view123"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:id="@+id/view"
+        android:layout_width="280dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="8dp"
         android:background="#292929"
+        android:fadingEdge="horizontal|vertical"
+        android:fadingEdgeLength="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_matchTime2"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

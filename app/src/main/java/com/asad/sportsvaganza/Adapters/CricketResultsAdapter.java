@@ -21,7 +21,7 @@ public class CricketResultsAdapter extends RecyclerView.Adapter<CricketResultsAd
     @Override
     public CricketResultsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.listitem_football_results, parent, false);
+        View view = inflater.inflate(R.layout.listitem_cricket_results, parent, false);
         return new CricketResultsViewHolder(view);
     }
 
@@ -38,7 +38,7 @@ public class CricketResultsAdapter extends RecyclerView.Adapter<CricketResultsAd
 
     public class CricketResultsViewHolder extends RecyclerView.ViewHolder{
         TextView text123;
-        TextView my123;
+
         View view1;
         public CricketResultsViewHolder(@NonNull View itemView) {
             super(itemView);

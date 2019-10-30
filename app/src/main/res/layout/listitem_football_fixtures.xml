@@ -14,7 +14,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView_VS"
         app:layout_constraintEnd_toStartOf="@+id/textView_VS"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView_VS"
         app:layout_constraintVertical_bias="0.0" />
@@ -42,7 +42,6 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView_VS"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toEndOf="@+id/textView_VS"
         app:layout_constraintTop_toTopOf="@+id/textView_VS" />
 
