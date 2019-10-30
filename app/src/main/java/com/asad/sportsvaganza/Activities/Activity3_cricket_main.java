@@ -1,20 +1,15 @@
 package com.asad.sportsvaganza.Activities;
-import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
 import com.asad.sportsvaganza.Fragments.CricketFixturesFragment;
 import com.asad.sportsvaganza.Fragments.CricketResultsFragment;
-import com.asad.sportsvaganza.Fragments.FootballResultsFragment;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.tabs.TabLayout;
 import com.rhexgomez.typer.roboto.TyperRoboto;
 import com.asad.sportsvaganza.Adapters.ViewPagerAdapter;
 import com.asad.sportsvaganza.R;
-import com.asad.sportsvaganza.Fragments.FootballFixturesFragment;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +23,7 @@ public class Activity3_cricket_main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity4_cricket_scrollingtabs);
+        setContentView(R.layout.activity3_cricket_scrollingtabs);
         tabLayout = findViewById(R.id.tabs);
         Toolbar toolbar = findViewById(R.id.toolbarCricket);
         ViewPager mViewPager = findViewById(R.id.viewpager2);
