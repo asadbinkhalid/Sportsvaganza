@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
+import com.asad.sportsvaganza.Fragments.FootballLiveFragment;
 import com.asad.sportsvaganza.Fragments.FootballResultsFragment;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.tabs.TabLayout;
@@ -42,6 +43,7 @@ public class Activity3_football_main extends AppCompatActivity {
 //        mViewPagerAdapter.addFragment(LiveFragment.newInstance(), "About");
         mViewPagerAdapter.addFragment(FootballFixturesFragment.newInstance(), "Fixtures");
         mViewPagerAdapter.addFragment(FootballResultsFragment.newInstance(), "Results");
+        mViewPagerAdapter.addFragment(FootballLiveFragment.newInstance(),"Live Score");
 
         mViewPager.setAdapter(mViewPagerAdapter);
         tabLayout.setupWithViewPager(mViewPager);

@@ -43,7 +43,6 @@ public class FootballFixturesFragment extends Fragment {
         football_fixtures_list.setLayoutManager(new LinearLayoutManager(getContext()));
         football_fixtures_list.setAdapter(new FootballFixturesAdapter(feedItems(), getContext()));
 
-
         return view;
     }
 
