@@ -45,7 +45,7 @@ public class Activity4_cricket_main extends AppCompatActivity {
 //        mViewPagerAdapter.addFragment(LiveFragment.newInstance(), "About");
         mViewPagerAdapter.addFragment(CricketFixturesFragment.newInstance(), "Fixtures");
         mViewPagerAdapter.addFragment(CricketResultsFragment.newInstance(), "Results");
-        mViewPagerAdapter.addFragment(CricketLiveFragment.newInstance(),"Live Results");
+        mViewPagerAdapter.addFragment(CricketLiveFragment.newInstance(),"Live Score");
 
         mViewPager.setAdapter(mViewPagerAdapter);
         tabLayout.setupWithViewPager(mViewPager);

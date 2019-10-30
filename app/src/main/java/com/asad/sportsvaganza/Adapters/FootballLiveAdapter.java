@@ -10,25 +10,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.sportsvaganza.R;
 
-public class CricketFixturesAdapter extends RecyclerView.Adapter<CricketFixturesAdapter.CricketFixturesViewHolder> {
+public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapter.FootballLiveViewHolder> {
 
     private String[] data;
 
-    public CricketFixturesAdapter(String[] data){
+    public FootballLiveAdapter(String[] data){
         this.data = data;
 
     }
 
     @NonNull
     @Override
-    public CricketFixturesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public FootballLiveViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.listitem_cricket_live, parent, false);
-        return new CricketFixturesViewHolder(view);
+        View view = inflater.inflate(R.layout.listitem_football_live, parent, false);
+        return new FootballLiveViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CricketFixturesViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FootballLiveViewHolder holder, int position) {
         String title = data[position];
         holder.text123.setText(title);
     }
@@ -38,10 +38,10 @@ public class CricketFixturesAdapter extends RecyclerView.Adapter<CricketFixtures
         return data.length;
     }
 
-    public class CricketFixturesViewHolder extends RecyclerView.ViewHolder{
+    public class FootballLiveViewHolder extends RecyclerView.ViewHolder{
         TextView text123;
         View view1;
-        public CricketFixturesViewHolder(@NonNull View itemView) {
+        public FootballLiveViewHolder(@NonNull View itemView) {
             super(itemView);
             text123 = itemView.findViewById(R.id.text123);
             view1 = itemView.findViewById(R.id.view123);
