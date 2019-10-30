@@ -17,11 +17,20 @@ public class Activity2_gamesList extends AppCompatActivity {
         setContentView(R.layout.activity2_games_list);
 
 
-        Button signup = findViewById(R.id.button_football);
-        signup.setOnClickListener(new View.OnClickListener() {
+        Button football = findViewById(R.id.button_football);
+        football.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Activity2_gamesList.this, Activity3_football_main.class);
+                startActivity(intent);
+            }
+        });
+
+        Button cricket = findViewById(R.id.button_cricket);
+        cricket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Activity2_gamesList.this, Activity4_cricket_main.class);
                 startActivity(intent);
             }
         });
