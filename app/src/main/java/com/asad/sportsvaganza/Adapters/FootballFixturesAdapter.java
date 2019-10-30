@@ -1,5 +1,6 @@
 package com.asad.sportsvaganza.Adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,14 +9,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.asad.sportsvaganza.Models.FootballFixturesModel;
 import com.asad.sportsvaganza.R;
+
+import java.util.List;
 
 public class FootballFixturesAdapter extends RecyclerView.Adapter<FootballFixturesAdapter.FootballFixturesViewHolder> {
 
-    private String[] data;
+    private List<FootballFixturesModel> footballFixturesModelList;
+    private Context context;
 
-    public FootballFixturesAdapter(String[] data){
-        this.data = data;
+    public FootballFixturesAdapter(List<FootballFixturesModel> footballFixturesModelList, Context context){
+        this.footballFixturesModelList = footballFixturesModelList;
+        this.context = context;
 
     }
 
@@ -29,22 +35,28 @@ public class FootballFixturesAdapter extends RecyclerView.Adapter<FootballFixtur
 
     @Override
     public void onBindViewHolder(@NonNull FootballFixturesViewHolder holder, int position) {
-        String title = data[position];
-        holder.text123.setText(title);
+        holder.mteamA.setText(footballFixturesModelList.get(position).teamA);
+        holder.mteamB.setText(footballFixturesModelList.get(position).teamB);
+        holder.mtime.setText(footballFixturesModelList.get(position).time);
+        holder.mdate.setText(footballFixturesModelList.get(position).date);
     }
 
     @Override
     public int getItemCount() {
-        return data.length;
+        return footballFixturesModelList.size();
     }
 
     public class FootballFixturesViewHolder extends RecyclerView.ViewHolder{
-        TextView text123;
-        View view1;
+        TextView mteamA;
+        TextView mteamB;
+        TextView mtime;
+        TextView mdate;
         public FootballFixturesViewHolder(@NonNull View itemView) {
             super(itemView);
-            text123 = itemView.findViewById(R.id.text123);
-            view1 = itemView.findViewById(R.id.view123);
+            mteamA = itemView.findViewById(R.id.textView_teamAName);
+            mteamB = itemView.findViewById(R.id.textView_teamBName);
+            mtime = itemView.findViewById(R.id.text_matchTime);
+            mdate = itemView.findViewById(R.id.match_date);
         }
     }
 
