@@ -6,21 +6,6 @@
     android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.AppCompatTextView
-<<<<<<< HEAD
-        android:id="@+id/text123"
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="text123"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-=======
         android:id="@+id/textView_teamAName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -86,20 +71,10 @@
         app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toEndOf="@+id/text_matchTime"
         app:layout_constraintTop_toTopOf="@+id/text_matchTime"
->>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
         app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/view123"
-<<<<<<< HEAD
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#292929"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-=======
         android:layout_width="280dp"
         android:layout_height="0.5dp"
         android:layout_marginTop="8dp"
@@ -111,7 +86,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_matchTime"
         app:layout_constraintVertical_bias="1.0" />
->>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

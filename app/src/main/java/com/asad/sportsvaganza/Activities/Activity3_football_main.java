@@ -6,10 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
-<<<<<<< HEAD
-=======
 import com.asad.sportsvaganza.Fragments.FootballLiveFragment;
->>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
 import com.asad.sportsvaganza.Fragments.FootballResultsFragment;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.tabs.TabLayout;
@@ -32,11 +29,7 @@ public class Activity3_football_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity3_football_scrollingtabs);
         tabLayout = findViewById(R.id.tabs);
-<<<<<<< HEAD
-        Toolbar toolbar = findViewById(R.id.toolbar);
-=======
         Toolbar toolbar = findViewById(R.id.toolbar1);
->>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
         ViewPager mViewPager = findViewById(R.id.viewpager1);
 
         ViewPagerAdapter mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
@@ -50,10 +43,7 @@ public class Activity3_football_main extends AppCompatActivity {
 //        mViewPagerAdapter.addFragment(LiveFragment.newInstance(), "About");
         mViewPagerAdapter.addFragment(FootballFixturesFragment.newInstance(), "Fixtures");
         mViewPagerAdapter.addFragment(FootballResultsFragment.newInstance(), "Results");
-<<<<<<< HEAD
-=======
         mViewPagerAdapter.addFragment(FootballLiveFragment.newInstance(),"Live Score");
->>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
 
         mViewPager.setAdapter(mViewPagerAdapter);
         tabLayout.setupWithViewPager(mViewPager);

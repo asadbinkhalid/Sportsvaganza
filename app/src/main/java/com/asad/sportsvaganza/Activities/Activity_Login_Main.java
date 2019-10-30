@@ -5,15 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.view.View;
 import android.widget.Button;
-=======
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
->>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
 
 import com.asad.sportsvaganza.R;
 
@@ -28,10 +23,6 @@ public class Activity_Login_Main extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD
-                Intent intent = new Intent(Activity_Login_Main.this, Activity2_gamesList.class);
-                startActivity(intent);
-=======
                 Boolean check = true;
                 EditText etUserName = (EditText) findViewById(R.id.username);
                 String strUserName = etUserName.getText().toString();
@@ -61,7 +52,6 @@ public class Activity_Login_Main extends AppCompatActivity {
                 }
                 else
                     return;
->>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
             }
         });
     }

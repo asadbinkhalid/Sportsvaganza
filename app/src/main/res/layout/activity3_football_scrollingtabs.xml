@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-=======
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,14 +6,12 @@
     android:layout_height="match_parent"
 
     >
->>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
 
     <androidx.viewpager.widget.ViewPager
 
         android:id="@+id/viewpager1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-<<<<<<< HEAD
         android:verticalScrollbarPosition="defaultPosition"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,9 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_bar"
         app:layout_constraintVertical_bias="0.0">
-=======
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
->>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
 
     </androidx.viewpager.widget.ViewPager>
 
@@ -39,35 +27,23 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:background="@drawable/football_bg"
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-=======
-
-        android:fitsSystemWindows="true"
-        android:theme="@style/AppTheme.AppBarOverlay">
->>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-<<<<<<< HEAD
-            android:addStatesFromChildren="false"
+
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-=======
-            android:background="@drawable/football_bg"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="exitUntilCollapsed"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@id/toolbar1">
->>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
+            >
 
 
             <TextView
@@ -107,11 +83,7 @@
                 app:tabTextColor="@color/blue" />
 
             <androidx.appcompat.widget.Toolbar
-<<<<<<< HEAD
-                android:id="@+id/toolbar"
-=======
                 android:id="@+id/toolbar1"
->>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="top"
@@ -124,8 +96,4 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-<<<<<<< HEAD
-</androidx.constraintlayout.widget.ConstraintLayout>
-=======
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
->>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
