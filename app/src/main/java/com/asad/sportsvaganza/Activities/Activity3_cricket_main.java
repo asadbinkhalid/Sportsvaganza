@@ -22,7 +22,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 
-public class Activity4_cricket_main extends AppCompatActivity {
+public class Activity3_cricket_main extends AppCompatActivity {
     TabLayout tabLayout;
     @RequiresApi(api = Build.VERSION_CODES.P)
     @Override

@@ -31,8 +31,8 @@
             android:layout_height="match_parent"
             android:background="@drawable/football_bg"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="exitUntilCollapsed"
+            app:contentScrim="@color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@id/toolbar1">
 
 

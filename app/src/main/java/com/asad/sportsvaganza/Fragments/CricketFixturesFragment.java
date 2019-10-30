@@ -21,8 +21,8 @@ public class CricketFixturesFragment extends Fragment {
 
     }
 
-    public static FootballFixturesFragment newInstance() {
-        FootballFixturesFragment fragment = new FootballFixturesFragment();
+    public static CricketFixturesFragment newInstance() {
+        CricketFixturesFragment fragment = new CricketFixturesFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
