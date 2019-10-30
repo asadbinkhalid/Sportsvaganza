@@ -23,7 +23,7 @@ public class CricketFixturesAdapter extends RecyclerView.Adapter<CricketFixtures
     @Override
     public CricketFixturesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.listitem_cricket_live, parent, false);
+        View view = inflater.inflate(R.layout.listitem_cricket_fixtures, parent, false);
         return new CricketFixturesViewHolder(view);
     }
 
