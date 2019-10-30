@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.asad.sportsvaganza.Adapters.FootballLiveAdapter;
 import com.asad.sportsvaganza.Adapters.FootballResultsAdapter;
 import com.asad.sportsvaganza.R;
 
@@ -37,9 +38,8 @@ public class FootballLiveFragment extends Fragment {
         RecyclerView football_live_list = view.findViewById(R.id.football_live_list);
         football_live_list.setLayoutManager(new LinearLayoutManager(getContext()));
         String[] matches = {"match 1", "match 2", "match 3", "match 4", "match 5", "match 6", "match 7", "match 8", "match 9", "match 10", "match 11", "match 12", "match 13", "match 14", "match 15"};
-        football_live_list.setAdapter(new FootballResultsAdapter(matches));
-
-
+        football_live_list.setAdapter(new FootballLiveAdapter(matches));
+        
         return view;
     }
 
