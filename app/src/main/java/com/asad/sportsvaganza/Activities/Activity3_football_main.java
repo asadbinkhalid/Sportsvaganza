@@ -28,7 +28,7 @@ public class Activity3_football_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity3_football_scrollingtabs);
         tabLayout = findViewById(R.id.tabs);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar1);
         ViewPager mViewPager = findViewById(R.id.viewpager1);
 
         ViewPagerAdapter mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
