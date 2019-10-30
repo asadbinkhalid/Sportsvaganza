@@ -22,7 +22,6 @@ public class FootballFixturesAdapter extends RecyclerView.Adapter<FootballFixtur
     public FootballFixturesAdapter(List<FootballFixturesModel> footballFixturesModelList, Context context){
         this.footballFixturesModelList = footballFixturesModelList;
         this.context = context;
-
     }
 
     @NonNull
@@ -51,6 +50,7 @@ public class FootballFixturesAdapter extends RecyclerView.Adapter<FootballFixtur
         TextView mteamB;
         TextView mtime;
         TextView mdate;
+
         public FootballFixturesViewHolder(@NonNull View itemView) {
             super(itemView);
             mteamA = itemView.findViewById(R.id.textView_teamAName);

@@ -41,7 +41,6 @@ public class FootballFixturesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_football_fixtures, viewGroup, false);
         RecyclerView football_fixtures_list = view.findViewById(R.id.football_fixtures_list);
         football_fixtures_list.setLayoutManager(new LinearLayoutManager(getContext()));
-        //String[] matches = {"match 1", "match 2", "match 3", "match 4", "match 5", "match 6", "match 7", "match 8", "match 9", "match 10", "match 11", "match 12", "match 13", "match 14", "match 15", "match 16", "match 17"};
         football_fixtures_list.setAdapter(new FootballFixturesAdapter(feedItems(), getContext()));
 
 
