@@ -20,5 +20,16 @@
     <string name="start">Start</string>
     <string name="end_match">End Match</string>
 
+<<<<<<< HEAD
+=======
+    <string name="teamA">Team A</string>
+    <string name="teamB">Team B</string>
+    <string name="match_time1">17:00</string>
+    <string name="match_date1">12/03/2019</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+>>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
 
 </resources>

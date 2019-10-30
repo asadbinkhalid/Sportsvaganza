@@ -19,6 +19,10 @@
         app:layout_constraintVertical_bias="0.445">
 
         <com.google.android.material.textfield.TextInputEditText
+<<<<<<< HEAD
+=======
+            android:id="@+id/username"
+>>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/username" />
@@ -36,6 +40,10 @@
         app:layout_constraintVertical_bias="0.04000002">
 
         <com.google.android.material.textfield.TextInputEditText
+<<<<<<< HEAD
+=======
+            android:id="@+id/password"
+>>>>>>> e681d18ffb2a242a14b8e17d0032f5112ec79b42
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password" />
