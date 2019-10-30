@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 
 import com.asad.sportsvaganza.Fragments.CricketFixturesFragment;
+import com.asad.sportsvaganza.Fragments.CricketLiveFragment;
 import com.asad.sportsvaganza.Fragments.CricketResultsFragment;
 import com.asad.sportsvaganza.Fragments.FootballResultsFragment;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -44,6 +45,7 @@ public class Activity4_cricket_main extends AppCompatActivity {
 //        mViewPagerAdapter.addFragment(LiveFragment.newInstance(), "About");
         mViewPagerAdapter.addFragment(CricketFixturesFragment.newInstance(), "Fixtures");
         mViewPagerAdapter.addFragment(CricketResultsFragment.newInstance(), "Results");
+        mViewPagerAdapter.addFragment(CricketLiveFragment.newInstance(),"Live Results");
 
         mViewPager.setAdapter(mViewPagerAdapter);
         tabLayout.setupWithViewPager(mViewPager);
