@@ -1,34 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/text123"
-
+        android:id="@+id/match_date3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="text123"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/match_date1"
+        app:layout_constraintBottom_toBottomOf="@+id/text_matchTime3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.401"
+        app:layout_constraintStart_toEndOf="@+id/text_matchTime3"
+        app:layout_constraintTop_toTopOf="@+id/text_matchTime3"
         app:layout_constraintVertical_bias="0.0" />
 
-    <View
-        android:id="@+id/view123"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#292929"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_matchTime3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:text="@string/match_time1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.303"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_teamBName5"
+        app:layout_constraintVertical_bias="0.35" />
 
+    <TextView
+        android:id="@+id/textView_won"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/won"
+        android:textColor="@color/cricket_green"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_teamAName5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView_teamAName5"
+        app:layout_constraintTop_toTopOf="@+id/textView_teamAName5"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textView_lost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/lost"
+        android:textColor="@color/football_red"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_teamBName5"
+        app:layout_constraintEnd_toEndOf="@+id/textView_won"
+        app:layout_constraintStart_toStartOf="@+id/textView_won"
+        app:layout_constraintTop_toTopOf="@+id/textView_teamBName5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_teamBName5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/teamB"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView_teamAName5"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView_teamAName5"
+        app:layout_constraintTop_toBottomOf="@id/textView_teamAName5"
+        app:layout_constraintVertical_bias="0.12" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_teamAName5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/teamA"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="280dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/cricket_green"
+        android:fadingEdge="horizontal|vertical"
+        android:fadingEdgeLength="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_matchTime3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
