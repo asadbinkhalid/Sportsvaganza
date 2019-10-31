@@ -38,10 +38,9 @@ public class Activity3_cricket_main extends AppCompatActivity {
         collapsingToolbarLayout.setCollapsedTitleTypeface(TyperRoboto.ROBOTO_REGULAR());
         collapsingToolbarLayout.setExpandedTitleTypeface(TyperRoboto.ROBOTO_REGULAR());
 
+        mViewPagerAdapter.addFragment(CricketLiveFragment.newInstance(),"Live");
         mViewPagerAdapter.addFragment(CricketFixturesFragment.newInstance(), "Fixtures");
         mViewPagerAdapter.addFragment(CricketResultsFragment.newInstance(), "Results");
-
-        mViewPagerAdapter.addFragment(CricketLiveFragment.newInstance(),"Live Score");
 
         mViewPager.setAdapter(mViewPagerAdapter);
         tabLayout.setupWithViewPager(mViewPager);
