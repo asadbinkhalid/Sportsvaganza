@@ -17,7 +17,6 @@ import com.asad.sportsvaganza.R;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class CricketFixturesFragment extends Fragment {
 
     public CricketFixturesFragment(){
