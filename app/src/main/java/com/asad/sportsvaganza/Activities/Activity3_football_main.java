@@ -40,10 +40,9 @@ public class Activity3_football_main extends AppCompatActivity {
         collapsingToolbarLayout.setCollapsedTitleTypeface(TyperRoboto.ROBOTO_REGULAR());
         collapsingToolbarLayout.setExpandedTitleTypeface(TyperRoboto.ROBOTO_REGULAR());
 
-//        mViewPagerAdapter.addFragment(LiveFragment.newInstance(), "About");
+        mViewPagerAdapter.addFragment(FootballLiveFragment.newInstance(),"Live");
         mViewPagerAdapter.addFragment(FootballFixturesFragment.newInstance(), "Fixtures");
         mViewPagerAdapter.addFragment(FootballResultsFragment.newInstance(), "Results");
-        mViewPagerAdapter.addFragment(FootballLiveFragment.newInstance(),"Live Score");
 
         mViewPager.setAdapter(mViewPagerAdapter);
         tabLayout.setupWithViewPager(mViewPager);

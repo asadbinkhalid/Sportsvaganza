@@ -6,30 +6,134 @@
     android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/text123"
+        android:id="@+id/textView_overs"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="text123"
-        android:textSize="24sp"
+        android:layout_marginStart="3dp"
+        android:text="@string/overs"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_over"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView_over"
+        app:layout_constraintTop_toTopOf="@+id/textView_over" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_over"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/over"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_fieldingTeam"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView_runs"
+        app:layout_constraintTop_toTopOf="@+id/textView_fieldingTeam" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_wickets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="@string/g1"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_slash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView_slash"
+        app:layout_constraintTop_toTopOf="@+id/textView_slash" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_slash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="@string/slash"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_runs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView_runs"
+        app:layout_constraintTop_toTopOf="@+id/textView_runs"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_runs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/runs"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_battingTeam"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView_battingTeam"
+        app:layout_constraintTop_toTopOf="@+id/textView_battingTeam" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_targetScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/targetScore"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_target"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView_target"
+        app:layout_constraintTop_toTopOf="@+id/textView_target" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_target"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/target"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_fieldingTeam"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_live"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/live"
+        android:textColor="@color/live_red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_battingTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/teamA"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView_live"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_live"
+        app:layout_constraintVertical_bias="00.06" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_fieldingTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/teamB"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView_battingTeam"
+        app:layout_constraintStart_toStartOf="@+id/textView_battingTeam"
+        app:layout_constraintTop_toBottomOf="@+id/textView_battingTeam"
+        app:layout_constraintVertical_bias="0.22" />
 
     <View
         android:id="@+id/view123"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#292929"
+        android:layout_width="280dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/cricket_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_target" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

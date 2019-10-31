@@ -33,13 +33,11 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:fontFamily="@font/typer_roboto_regular"
         android:text="@string/hyphen"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.25" />
@@ -55,8 +53,7 @@
         app:layout_constraintEnd_toStartOf="@id/textView_scoreA"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textView_hyphen"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toTopOf="@id/textView_hyphen" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_matchTime2"
@@ -69,8 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView_hyphen"
-        app:layout_constraintVertical_bias="0.32" />
+        app:layout_constraintTop_toBottomOf="@id/textView_hyphen" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textView_teamBName2"
@@ -83,8 +79,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toEndOf="@id/textView_scoreB"
-        app:layout_constraintTop_toTopOf="@id/textView_hyphen"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toTopOf="@id/textView_hyphen" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/match_date2"
@@ -102,10 +97,10 @@
         android:id="@+id/view"
         android:layout_width="280dp"
         android:layout_height="0.5dp"
-        android:layout_marginTop="8dp"
-        android:background="#292929"
+        android:layout_marginTop="10dp"
+        android:background="@color/football_red"
         android:fadingEdge="horizontal|vertical"
-        android:fadingEdgeLength="20dp"
+        android:fadingEdgeLength="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
