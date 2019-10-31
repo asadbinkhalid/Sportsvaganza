@@ -1,5 +1,6 @@
 package com.asad.sportsvaganza.Adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,13 +9,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.asad.sportsvaganza.Models.CricketResultsModel;
 import com.asad.sportsvaganza.R;
+
+import java.util.List;
 
 public class CricketResultsAdapter extends RecyclerView.Adapter<CricketResultsAdapter.CricketResultsViewHolder> {
 
-    private String[] data;
-    public CricketResultsAdapter(String[] data){
-        this.data = data;
+    private List<CricketResultsModel> cricketResultsModelList;
+    private Context context;
+
+    public CricketResultsAdapter(List<CricketResultsModel> cricketResultsModelList, Context context){
+        this.cricketResultsModelList = cricketResultsModelList;
+        this.context = context;
+
     }
 
     @NonNull
@@ -27,23 +35,22 @@ public class CricketResultsAdapter extends RecyclerView.Adapter<CricketResultsAd
 
     @Override
     public void onBindViewHolder(@NonNull CricketResultsViewHolder holder, int position) {
-        String title = data[position];
-        holder.text123.setText(title);
+        holder.mteamA.setText(cricketResultsModelList.get(position).teamA);
+        holder.mteamB.setText(cricketResultsModelList.get(position).teamB);
     }
 
     @Override
     public int getItemCount() {
-        return data.length;
+        return cricketResultsModelList.size();
     }
 
     public class CricketResultsViewHolder extends RecyclerView.ViewHolder{
-        TextView text123;
-
-        View view1;
+        TextView mteamA;
+        TextView mteamB;
         public CricketResultsViewHolder(@NonNull View itemView) {
             super(itemView);
-            text123 = itemView.findViewById(R.id.text123);
-            view1 = itemView.findViewById(R.id.view123);
+            mteamA = itemView.findViewById(R.id.textView_teamAName5);
+            mteamB = itemView.findViewById(R.id.textView_teamBName5);
         }
     }
 
