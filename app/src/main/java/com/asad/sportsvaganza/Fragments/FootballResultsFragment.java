@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.sportsvaganza.Adapters.FootballResultsAdapter;
-import com.asad.sportsvaganza.Models.FootballFixturesModel;
 import com.asad.sportsvaganza.Models.FootballResultsModel;
 import com.asad.sportsvaganza.R;
 

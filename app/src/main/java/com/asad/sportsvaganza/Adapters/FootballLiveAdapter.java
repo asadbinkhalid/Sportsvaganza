@@ -1,5 +1,6 @@
 package com.asad.sportsvaganza.Adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,15 +9,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.asad.sportsvaganza.Models.FootballLiveModel;
 import com.asad.sportsvaganza.R;
+
+import java.util.List;
 
 public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapter.FootballLiveViewHolder> {
 
-    private String[] data;
+    private List<FootballLiveModel> footballLiveModelList;
+    private Context context;
 
-    public FootballLiveAdapter(String[] data){
-        this.data = data;
-
+    public FootballLiveAdapter(List<FootballLiveModel> footballLiveModelList, Context context){
+        this.footballLiveModelList = footballLiveModelList;
+        this.context = context;
     }
 
     @NonNull
@@ -29,22 +34,29 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
 
     @Override
     public void onBindViewHolder(@NonNull FootballLiveViewHolder holder, int position) {
-        String title = data[position];
-        holder.text123.setText(title);
+        holder.mteamA3.setText(footballLiveModelList.get(position).teamA3);
+        holder.mteamB3.setText(footballLiveModelList.get(position).teamB3);
+        holder.mscoreA3.setText(footballLiveModelList.get(position).scoreA3);
+        holder.mscoreB3.setText(footballLiveModelList.get(position).scoreB3);
     }
 
     @Override
     public int getItemCount() {
-        return data.length;
+        return footballLiveModelList.size();
     }
 
     public class FootballLiveViewHolder extends RecyclerView.ViewHolder{
-        TextView text123;
-        View view1;
+        TextView mteamA3;
+        TextView mteamB3;
+        TextView mscoreA3;
+        TextView mscoreB3;
+
         public FootballLiveViewHolder(@NonNull View itemView) {
             super(itemView);
-            text123 = itemView.findViewById(R.id.text123);
-            view1 = itemView.findViewById(R.id.view123);
+            mteamA3 = itemView.findViewById(R.id.textView_teamAName3);
+            mteamB3 = itemView.findViewById(R.id.textView_teamBName3);
+            mscoreA3 = itemView.findViewById(R.id.textView_scoreA3);
+            mscoreB3 = itemView.findViewById(R.id.textView_scoreB3);
         }
     }
 

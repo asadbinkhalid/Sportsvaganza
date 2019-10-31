@@ -7,8 +7,17 @@
     <color name="transparent">#00FFFFFF</color>
     <color name="white">#FFFFFF</color>
     <color name="blue">#00279B</color>
-    <color name="semi_transparent">#A6FFFFFF</color>
-    <color name="grey">#464646</color>
+    <color name="semi_transparent">#BFFFFFFF</color>
+    <color name="grey">#292929</color>
     <color name="dark_grey">#A9A9A9</color>
     <color name="dark_blue">#001D6D</color>
+    <color name="live_red">#AA1414 </color>
+    <color name="football_red">#e93f44</color>
+    <color name="cricket_green">#1f6e8a</color>
+    <color name="football_tab_bg_trans">#33E9B3B4</color>
+    <color name="cricket_tab_bg_trans">#3320434E</color>
+    <color name="football_tab_text">#861B1C</color>
+    <color name="football_tab_bg">#752022</color>
+    <color name="cricket_tab_bg">#103644</color>
+    <color name="cricket_tab_text">#044457</color>
 </resources>

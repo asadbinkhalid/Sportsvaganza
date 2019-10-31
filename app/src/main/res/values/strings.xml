@@ -26,4 +26,11 @@
     <string name="match_date1">12/03/2019</string>
     <string name="g0">0</string>
     <string name="g1">1</string>
+    <string name="live">Live</string>
+    <string name="runs">92</string>
+    <string name="slash">/</string>
+    <string name="target">Target:</string>
+    <string name="targetScore">143</string>
+    <string name="over">12</string>
+
 </resources>
