@@ -30,7 +30,7 @@ public class Activity2_gamesList extends AppCompatActivity {
         cricket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Activity2_gamesList.this, Activity4_cricket_main.class);
+                Intent intent = new Intent(Activity2_gamesList.this, Activity3_cricket_main.class);
                 startActivity(intent);
             }
         });

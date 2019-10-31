@@ -11,9 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.sportsvaganza.Adapters.CricketFixturesAdapter;
-import com.asad.sportsvaganza.Adapters.FootballFixturesAdapter;
+import com.asad.sportsvaganza.Models.CricketFixturesModel;
 import com.asad.sportsvaganza.R;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class CricketFixturesFragment extends Fragment {
 
@@ -38,10 +40,19 @@ public class CricketFixturesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_cricket_fixtures, viewGroup, false);
         RecyclerView cricket_fixtures_list = view.findViewById(R.id.cricket_fixtures_list);
         cricket_fixtures_list.setLayoutManager(new LinearLayoutManager(getContext()));
-        String[] matches = {"match 1", "match 2", "match 3", "match 4", "match 5", "match 6", "match 7", "match 8", "match 9", "match 10", "match 11", "match 12", "match 13", "match 14", "match 15", "match 16", "match 17"};
-        cricket_fixtures_list.setAdapter(new CricketFixturesAdapter(matches));
+        cricket_fixtures_list.setAdapter(new CricketFixturesAdapter(feedItems(), getContext()));
 
 
         return view;
+    }
+
+    private List<CricketFixturesModel> feedItems(){
+        List<CricketFixturesModel> demoItems = new ArrayList<>();
+        demoItems.add(new CricketFixturesModel("Team A", "Team B", "15:00", "21/2/2019"));
+        demoItems.add(new CricketFixturesModel("Team C", "Team D", "17:00", "21/2/2019"));
+        demoItems.add(new CricketFixturesModel("Team E", "Team F", "17:00", "22/2/2019"));
+        demoItems.add(new CricketFixturesModel("Team X", "Team Y", "18:00", "22/2/2019"));
+
+        return demoItems;
     }
 }

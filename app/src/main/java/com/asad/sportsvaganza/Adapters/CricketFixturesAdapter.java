@@ -1,5 +1,6 @@
 package com.asad.sportsvaganza.Adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,14 +9,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.asad.sportsvaganza.Models.CricketFixturesModel;
 import com.asad.sportsvaganza.R;
+
+import java.util.List;
 
 public class CricketFixturesAdapter extends RecyclerView.Adapter<CricketFixturesAdapter.CricketFixturesViewHolder> {
 
-    private String[] data;
+    private List<CricketFixturesModel> cricketFixturesModelList;
+    private Context context;
 
-    public CricketFixturesAdapter(String[] data){
-        this.data = data;
+    public CricketFixturesAdapter(List<CricketFixturesModel> cricketFixturesModelList, Context context){
+        this.cricketFixturesModelList = cricketFixturesModelList;
+        this.context = context;
 
     }
 
@@ -23,28 +29,34 @@ public class CricketFixturesAdapter extends RecyclerView.Adapter<CricketFixtures
     @Override
     public CricketFixturesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.listitem_cricket_live, parent, false);
+        View view = inflater.inflate(R.layout.listitem_cricket_fixtures, parent, false);
         return new CricketFixturesViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CricketFixturesViewHolder holder, int position) {
-        String title = data[position];
-        holder.text123.setText(title);
+        holder.mteamA.setText(cricketFixturesModelList.get(position).teamA);
+        holder.mteamB.setText(cricketFixturesModelList.get(position).teamB);
+        holder.mtime.setText(cricketFixturesModelList.get(position).time);
+        holder.mdate.setText(cricketFixturesModelList.get(position).date);
     }
 
     @Override
     public int getItemCount() {
-        return data.length;
+        return cricketFixturesModelList.size();
     }
 
     public class CricketFixturesViewHolder extends RecyclerView.ViewHolder{
-        TextView text123;
-        View view1;
+        TextView mteamA;
+        TextView mteamB;
+        TextView mdate;
+        TextView mtime;
         public CricketFixturesViewHolder(@NonNull View itemView) {
             super(itemView);
-            text123 = itemView.findViewById(R.id.text123);
-            view1 = itemView.findViewById(R.id.view123);
+            mteamA = itemView.findViewById(R.id.textView_teamAName4);
+            mteamB = itemView.findViewById(R.id.textView_teamBName4);
+            mdate = itemView.findViewById(R.id.match_date4);
+            mtime = itemView.findViewById(R.id.text_matchTime4);
         }
     }
 

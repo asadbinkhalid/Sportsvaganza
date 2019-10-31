@@ -8,7 +8,7 @@ import android.os.Handler;
 
 import com.asad.sportsvaganza.R;
 
-public class Splash extends AppCompatActivity {
+public class Activity_Splash extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class Splash extends AppCompatActivity {
 
             public void run() {
 
-                Intent i = new Intent(Splash.this, Activity_Login_Main.class);
+                Intent i = new Intent(Activity_Splash.this, Activity_Login_Main.class);
 
                 startActivity(i);
 

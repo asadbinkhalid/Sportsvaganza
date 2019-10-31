@@ -24,9 +24,15 @@
     <string name="teamB">Team B</string>
     <string name="match_time1">17:00</string>
     <string name="match_date1">12/03/2019</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="g0">0</string>
+    <string name="g1">1</string>
+    <string name="live">Live</string>
+    <string name="runs">92</string>
+    <string name="slash">/</string>
+    <string name="target">Target:</string>
+    <string name="targetScore">143</string>
+    <string name="over">12</string>
+    <string name="won">WON</string>
+    <string name="lost">LOST</string>
 
 </resources>
