@@ -34,5 +34,5 @@
     <string name="over">12</string>
     <string name="won">WON</string>
     <string name="lost">LOST</string>
-
+    <string name="logout">Logout</string>
 </resources>
