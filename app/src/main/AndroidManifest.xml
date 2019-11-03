@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".Activities.Activity_Login_Main" />
+
         <activity android:name=".Activities.Activity3_football_main" />
         <activity android:name=".Activities.Activity3_cricket_main" />
         <activity android:name=".Activities.Activity2_gamesList" />
