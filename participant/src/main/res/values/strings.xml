@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Sportsvaganza</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="games">Games</string>
+    <string name="cricket">Cricket</string>
+    <string name="football">Football</string>
+    <string name="results">Results</string>
+    <string name="score">Score</string>
+    <string name="fixtures">Fixtures</string>
+    <string name="live_matches">Live Matches</string>
+    <string name="hyphen">-</string>
+    <string name="goal_scorers">Goal Scorers</string>
+    <string name="overs">overs</string>
+    <string name="mins">mins</string>
+    <string name="vs">vs</string>
+    <string name="VS">VS</string>
+    <string name="add_fixture">Add Fixture</string>
+    <string name="start">Start</string>
+    <string name="end_match">End Match</string>
+
+    <string name="teamA">Team A</string>
+    <string name="teamB">Team B</string>
+    <string name="match_time1">17:00</string>
+    <string name="match_date1">12/03/2019</string>
+    <string name="g0">0</string>
+    <string name="g1">1</string>
+    <string name="live">Live</string>
+    <string name="runs">92</string>
+    <string name="slash">/</string>
+    <string name="target">Target:</string>
+    <string name="targetScore">143</string>
+    <string name="over">12</string>
+    <string name="won">WON</string>
+    <string name="lost">LOST</string>
+    <string name="logout">Logout</string>
+</resources>

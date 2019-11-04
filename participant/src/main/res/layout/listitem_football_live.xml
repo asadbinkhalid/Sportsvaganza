@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView_live"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/live"
+        android:textColor="@color/live_red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_scoreB3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/typer_roboto_bold"
+        android:text="@string/g1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/textView_hyphen3"
+        app:layout_constraintStart_toEndOf="@id/textView_hyphen3"
+        app:layout_constraintTop_toTopOf="@id/textView_hyphen3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_hyphen3"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/typer_roboto_regular"
+        android:text="@string/hyphen"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_live"
+        app:layout_constraintVertical_bias="0.15" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_teamAName3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/teamA"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/textView_hyphen3"
+        app:layout_constraintEnd_toStartOf="@id/textView_scoreA3"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textView_hyphen3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_scoreA3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/typer_roboto_bold"
+        android:text="@string/g0"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/textView_hyphen3"
+        app:layout_constraintEnd_toStartOf="@id/textView_hyphen3"
+        app:layout_constraintTop_toTopOf="@id/textView_hyphen3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_teamBName3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/teamB"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/textView_hyphen3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@id/textView_scoreB3"
+        app:layout_constraintTop_toTopOf="@id/textView_hyphen3" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="280dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="14dp"
+        android:background="@color/football_red"
+        android:fadingEdge="horizontal|vertical"
+        android:fadingEdgeLength="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_hyphen3"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
