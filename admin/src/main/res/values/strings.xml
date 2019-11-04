@@ -18,7 +18,7 @@
     <string name="VS">VS</string>
     <string name="add_fixture">Add Fixture</string>
     <string name="start">Start</string>
-    <string name="end_match">End Match</string>
+    <string name="end_match">End</string>
 
     <string name="teamA">Team A</string>
     <string name="teamB">Team B</string>
@@ -35,5 +35,12 @@
     <string name="won">WON</string>
     <string name="lost">LOST</string>
     <string name="logout">Logout</string>
-    <string name="start_match">Start Match</string>
+    <string name="start_match">Start</string>
+
+    <string name="newmatch">Add a new match</string>
+    <string name="team1">Team 1 Name</string>
+    <string name="team2">Team 2 Name</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="done">Done</string>
 </resources>

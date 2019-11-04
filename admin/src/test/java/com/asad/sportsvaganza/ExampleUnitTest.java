@@ -1,4 +1,4 @@
-package com.example.admin;
+package com.asad.sportsvaganza;
 
 import org.junit.Test;
 

@@ -1,16 +1,16 @@
 package com.asad.sportsvaganza.Activities;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 
 import com.asad.sportsvaganza.Fragments.FootballLiveFragment;
 import com.asad.sportsvaganza.Fragments.FootballResultsFragment;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.rhexgomez.typer.roboto.TyperRoboto;
 import com.asad.sportsvaganza.Adapters.ViewPagerAdapter;
@@ -62,6 +62,14 @@ public class Activity3_football_main extends AppCompatActivity {
         mViewPager.setAdapter(mViewPagerAdapter);
         tabLayout.setupWithViewPager(mViewPager);
 
+        FloatingActionButton addmatchfootball = findViewById(R.id.football_add_match_button);
+        addmatchfootball.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Activity3_football_main.this, Activity4_football_addMatch.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

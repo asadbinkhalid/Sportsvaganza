@@ -14,8 +14,8 @@
     <color name="live_red">#AA1414 </color>
     <color name="football_red">#e93f44</color>
     <color name="cricket_green">#1f6e8a</color>
-    <color name="football_tab_bg_trans">#33E9B3B4</color>
-    <color name="cricket_tab_bg_trans">#3320434E</color>
+    <color name="football_tab_bg_trans">#59E9B3B4</color>
+    <color name="cricket_tab_bg_trans">#597AC2D8</color>
     <color name="football_tab_text">#861B1C</color>
     <color name="football_tab_bg">#752022</color>
     <color name="cricket_tab_bg">#103644</color>

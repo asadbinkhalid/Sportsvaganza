@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.22" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textView_teamBName4"
@@ -52,9 +52,10 @@
         android:text="@string/match_time1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_VS3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_VS3"
+        app:layout_constraintVertical_bias="0.6" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/match_date4"
@@ -63,10 +64,27 @@
         android:text="@string/match_date1"
         app:layout_constraintBottom_toBottomOf="@+id/text_matchTime4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toEndOf="@+id/text_matchTime4"
         app:layout_constraintTop_toTopOf="@+id/text_matchTime4"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_button_start_cricket"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/text_matchTime4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.646"
+        app:layout_constraintStart_toEndOf="@id/match_date4"
+        app:layout_constraintTop_toTopOf="@id/text_matchTime4"
+        app:layout_constraintVertical_bias="0.5"
+        tools:text="@string/start_match" />
+
 
     <View
         android:id="@+id/view4"

@@ -4,13 +4,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_logo1"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_logo1"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".Activities.Activity4_cricket_addMatch"></activity>
+        <activity android:name=".Activities.Activity4_football_addMatch" />
         <activity android:name=".Activities.Activity_Login_Main" />
-
         <activity android:name=".Activities.Activity3_football_main" />
         <activity android:name=".Activities.Activity3_cricket_main" />
         <activity android:name=".Activities.Activity2_gamesList" />
