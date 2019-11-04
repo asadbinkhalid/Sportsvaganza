@@ -12,6 +12,7 @@
         android:layout_marginTop="4dp"
         android:background="@drawable/round_button_start_football"
         android:fontFamily="sans-serif-medium"
+        android:text="@string/end_match"
         android:textColor="@color/white"
         android:textSize="14sp"
         android:visibility="visible"
