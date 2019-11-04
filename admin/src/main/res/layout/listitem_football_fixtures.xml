@@ -67,6 +67,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/round_button_start_football"
         android:fontFamily="sans-serif-medium"
+        android:text="@string/start_match"
         android:textColor="@color/white"
         android:textSize="14sp"
         android:visibility="visible"
