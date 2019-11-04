@@ -35,4 +35,5 @@
     <string name="won">WON</string>
     <string name="lost">LOST</string>
     <string name="logout">Logout</string>
+    <string name="start_match">Start Match</string>
 </resources>

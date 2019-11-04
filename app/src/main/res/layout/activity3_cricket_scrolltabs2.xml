@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager1"
+
+        android:id="@+id/viewpager2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:verticalScrollbarPosition="defaultPosition"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     </androidx.viewpager.widget.ViewPager>
 
@@ -23,20 +19,18 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_height"
-        android:background="@color/semi_transparent"
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
+            android:id="@+id/toolbar_layoutCricket"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:background="@drawable/football_bg"
+            android:background="@drawable/cricket_bg"
             android:fitsSystemWindows="true"
-            app:contentScrim="@color/football_red"
+            app:contentScrim="@color/cricket_green"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@id/toolbar1">
+            app:toolbarId="@id/toolbarCricket">
 
 
             <TextView
@@ -49,14 +43,14 @@
                 android:fontFamily="@font/roboto"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:text="@string/football"
+                android:text="@string/cricket"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/grey"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar1"
+                android:id="@+id/toolbarCricket"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="top"
@@ -78,15 +72,26 @@
                 app:layout_scrollFlags="scroll|enterAlways"
 
                 app:tabGravity="fill"
-                app:tabIndicatorColor="@color/football_tab_bg"
+                app:tabIndicatorColor="@color/cricket_tab_bg"
                 app:tabInlineLabel="true"
                 app:tabMode="fixed"
                 app:tabSelectedTextColor="@color/black"
                 app:tabTextAppearance="@style/TabLayoutTextSize"
-                app:tabTextColor="@color/football_tab_text" />
+                app:tabTextColor="@color/cricket_tab_text" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
+
     </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        app:backgroundTint="@color/cricket_green"
+        app:srcCompat="@drawable/ic_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

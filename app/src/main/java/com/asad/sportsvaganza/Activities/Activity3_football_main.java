@@ -63,8 +63,6 @@ public class Activity3_football_main extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
 
-
-
     }
 
     @Override
