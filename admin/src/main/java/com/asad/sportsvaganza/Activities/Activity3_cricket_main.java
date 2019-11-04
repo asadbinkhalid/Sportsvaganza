@@ -5,12 +5,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 
 import com.asad.sportsvaganza.Fragments.CricketFixturesFragment;
 import com.asad.sportsvaganza.Fragments.CricketLiveFragment;
 
 import com.asad.sportsvaganza.Fragments.CricketResultsFragment;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.rhexgomez.typer.roboto.TyperRoboto;
 import com.asad.sportsvaganza.Adapters.ViewPagerAdapter;
@@ -61,6 +63,14 @@ public class Activity3_cricket_main extends AppCompatActivity {
         mViewPager.setAdapter(mViewPagerAdapter);
         tabLayout.setupWithViewPager(mViewPager);
 
+        FloatingActionButton addmatchcricket = findViewById(R.id.cricket_add_match_button);
+        addmatchcricket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Activity3_cricket_main.this, Activity4_cricket_addMatch.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

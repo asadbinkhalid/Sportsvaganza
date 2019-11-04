@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.asad.sportsvaganza"
+    android:targetSandboxVersion="2"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="29" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@drawable/ic_logo1"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_logo1"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        <activity android:name="com.asad.sportsvaganza.Activities.Activity_Login_Main" />
+        <activity android:name="com.asad.sportsvaganza.Activities.Activity3_football_main" />
+        <activity android:name="com.asad.sportsvaganza.Activities.Activity3_cricket_main" />
+        <activity android:name="com.asad.sportsvaganza.Activities.Activity2_gamesList" />
+        <activity android:name="com.asad.sportsvaganza.Activities.Activity_Splash" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <provider
+            android:name="com.rhexgomez.typer.common.TyperProvider"
+            android:authorities="com.asad.sportsvaganza.com.rhexgomez.typer.roboto"
+            android:exported="false" />
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.asad.sportsvaganza.com.squareup.picasso"
+            android:exported="false" />
+    </application>
+
+</manifest>

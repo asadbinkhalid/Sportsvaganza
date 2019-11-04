@@ -5,6 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/round_button_start_football"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_hyphen3"
+        tools:text="@string/end_match" />
+
     <TextView
         android:id="@+id/textView_live"
         android:layout_width="wrap_content"
