@@ -15,7 +15,7 @@
         <activity android:name=".Activities.Activity3_football_main" />
         <activity android:name=".Activities.Activity3_cricket_main" />
         <activity android:name=".Activities.Activity2_gamesList" />
-        <activity android:name=".Activities.Activity_Splash">
+        <activity android:name=".Activities.Activity_Splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

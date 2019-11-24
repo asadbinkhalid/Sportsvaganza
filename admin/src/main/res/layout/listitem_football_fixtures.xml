@@ -76,7 +76,7 @@
         app:layout_constraintStart_toEndOf="@+id/match_date"
         app:layout_constraintTop_toTopOf="@+id/text_matchTime"
         app:layout_constraintVertical_bias="0.5"
-        tools:text="@string/start_match" />
+        tools:text="@string/start_match"/>
 
     <View
         android:id="@+id/view123"
