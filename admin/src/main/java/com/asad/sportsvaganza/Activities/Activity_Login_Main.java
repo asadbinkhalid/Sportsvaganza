@@ -43,10 +43,6 @@ public class Activity_Login_Main extends AppCompatActivity {
                     etUserName.setError("The Username Should Not Contain Any Spaces");
                     check = false;
                 }
-                if (strPassword.length()<6){
-                    etPass.setError("Password Contains Less Than 6 Characters");
-                    check = false;
-                }
                 if(TextUtils.isEmpty(strUserName)) {
                     etUserName.setError("Username Field Cannot Be Left Empty");
                     check = false;
