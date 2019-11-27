@@ -50,11 +50,6 @@ public class Activity_Login_Main extends AppCompatActivity {
                     etPass.setError("Password Field Cannot Be Left Empty");
                     check = false;
                 }
-
-                if (check) {
-                    Intent intent = new Intent(Activity_Login_Main.this, Activity2_gamesList.class);
-                    startActivity(intent);
-                }
                 if (check) {
                     mAuth.signInWithEmailAndPassword(strUserName, strPassword)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
