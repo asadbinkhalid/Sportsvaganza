@@ -1,6 +1,7 @@
 package com.asad.sportsvaganza.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
+import
+        androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +17,6 @@ public class Activity_Splash extends AppCompatActivity {
 
         new Handler().postDelayed(new Runnable() {
 
-// Using handler with postDelayed called runnable run method
 
             @Override
 

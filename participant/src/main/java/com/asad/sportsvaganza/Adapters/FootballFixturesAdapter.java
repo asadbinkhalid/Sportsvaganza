@@ -9,17 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.asad.sportsvaganza.Models.FootballFixturesModel;
+import com.asad.businesslogic.FootballMatch;
 import com.asad.sportsvaganza.R;
 
 import java.util.List;
 
 public class FootballFixturesAdapter extends RecyclerView.Adapter<FootballFixturesAdapter.FootballFixturesViewHolder> {
 
-    private List<FootballFixturesModel> footballFixturesModelList;
+    private List<FootballMatch> footballFixturesModelList;
     private Context context;
 
-    public FootballFixturesAdapter(List<FootballFixturesModel> footballFixturesModelList, Context context){
+    public FootballFixturesAdapter(List<FootballMatch> footballFixturesModelList, Context context){
         this.footballFixturesModelList = footballFixturesModelList;
         this.context = context;
     }
@@ -34,10 +34,10 @@ public class FootballFixturesAdapter extends RecyclerView.Adapter<FootballFixtur
 
     @Override
     public void onBindViewHolder(@NonNull FootballFixturesViewHolder holder, int position) {
-        holder.mteamA.setText(footballFixturesModelList.get(position).teamA);
-        holder.mteamB.setText(footballFixturesModelList.get(position).teamB);
-        holder.mtime.setText(footballFixturesModelList.get(position).time);
-        holder.mdate.setText(footballFixturesModelList.get(position).date);
+        holder.mteamA.setText(footballFixturesModelList.get(position).getTeam1().getName());
+        holder.mteamB.setText(footballFixturesModelList.get(position).getTeam2().getName());
+        holder.mtime.setText(footballFixturesModelList.get(position).getTime());
+        holder.mdate.setText(footballFixturesModelList.get(position).getDate());
     }
 
     @Override

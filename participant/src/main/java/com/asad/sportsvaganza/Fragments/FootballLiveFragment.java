@@ -10,8 +10,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.asad.businesslogic.FootballMatch;
+import com.asad.businesslogic.Team;
 import com.asad.sportsvaganza.Adapters.FootballLiveAdapter;
-import com.asad.sportsvaganza.Models.FootballLiveModel;
 import com.asad.sportsvaganza.R;
 
 import java.util.ArrayList;
@@ -45,10 +46,11 @@ public class FootballLiveFragment extends Fragment {
         return view;
     }
 
-    private List<FootballLiveModel> feedItems(){
-        List<FootballLiveModel> demoItems = new ArrayList<>();
-        demoItems.add(new FootballLiveModel("Team A", "Team B", "1", "0"));
-        demoItems.add(new FootballLiveModel("Team C", "Team D", "0", "0"));
+    private List<FootballMatch> feedItems(){
+        List<FootballMatch> demoItems = new ArrayList<>();
+//        demoItems.add(new FootballLiveModel("Team A", "Team B", "1", "0"));
+//        demoItems.add(new FootballLiveModel("Team C", "Team D", "0", "0"));
+        demoItems.add(new FootballMatch(new Team("khawaja11"), new Team("Asad11"), "12345time", "12345date", 0, 2));
 
         return demoItems;
     }

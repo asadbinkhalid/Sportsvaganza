@@ -9,17 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.asad.sportsvaganza.Models.FootballLiveModel;
+import com.asad.businesslogic.FootballMatch;
 import com.asad.sportsvaganza.R;
 
 import java.util.List;
 
 public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapter.FootballLiveViewHolder> {
 
-    private List<FootballLiveModel> footballLiveModelList;
+    private List<FootballMatch> footballLiveModelList;
     private Context context;
 
-    public FootballLiveAdapter(List<FootballLiveModel> footballLiveModelList, Context context){
+    public FootballLiveAdapter(List<FootballMatch> footballLiveModelList, Context context){
         this.footballLiveModelList = footballLiveModelList;
         this.context = context;
     }
@@ -34,10 +34,10 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
 
     @Override
     public void onBindViewHolder(@NonNull FootballLiveViewHolder holder, int position) {
-        holder.mteamA3.setText(footballLiveModelList.get(position).teamA3);
-        holder.mteamB3.setText(footballLiveModelList.get(position).teamB3);
-        holder.mscoreA3.setText(footballLiveModelList.get(position).scoreA3);
-        holder.mscoreB3.setText(footballLiveModelList.get(position).scoreB3);
+        holder.mteamA3.setText(footballLiveModelList.get(position).getTeam1().getName());
+        holder.mteamB3.setText(footballLiveModelList.get(position).getTeam2().getName());
+        holder.mscoreA3.setText(String.valueOf(footballLiveModelList.get(position).getTeam1Score()));
+        holder.mscoreB3.setText(String.valueOf(footballLiveModelList.get(position).getTeam2Score()));
     }
 
     @Override
