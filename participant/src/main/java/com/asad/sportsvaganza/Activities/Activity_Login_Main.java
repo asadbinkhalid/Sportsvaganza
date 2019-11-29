@@ -1,6 +1,7 @@
 package com.asad.sportsvaganza.Activities;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,10 +10,18 @@ import android.view.View;
 import android.widget.Button;
 import android.text.TextUtils;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.asad.sportsvaganza.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Activity_Login_Main extends AppCompatActivity {
+
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +42,6 @@ public class Activity_Login_Main extends AppCompatActivity {
                     etUserName.setError("The Username Should Not Contain Any Spaces");
                     check = false;
                 }
-                if (strPassword.length()<6){
-                    etPass.setError("Password Contains Less Than 6 Characters");
-                    check = false;
-                }
                 if(TextUtils.isEmpty(strUserName)) {
                     etUserName.setError("Username Field Cannot Be Left Empty");
                     check = false;
@@ -45,14 +50,27 @@ public class Activity_Login_Main extends AppCompatActivity {
                     etPass.setError("Password Field Cannot Be Left Empty");
                     check = false;
                 }
-
                 if (check) {
-                    Intent intent = new Intent(Activity_Login_Main.this, Activity2_gamesList.class);
-                    startActivity(intent);
+                    mAuth.signInWithEmailAndPassword(strUserName, strPassword)
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+
+                                        Intent intent = new Intent(Activity_Login_Main.this, Activity2_gamesList.class);
+                                        startActivity(intent);
+                                    }
+                                    else {
+                                        Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
+
+                                    }
+                                }
+                            });
+
                 }
-                else
-                    return;
             }
         });
+        FirebaseApp.initializeApp(getApplicationContext());
+        mAuth = FirebaseAuth.getInstance();
     }
 }

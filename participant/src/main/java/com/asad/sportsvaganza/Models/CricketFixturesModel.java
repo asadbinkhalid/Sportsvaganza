@@ -1,6 +1,7 @@
 package com.asad.sportsvaganza.Models;
 
 public class CricketFixturesModel {
+    int id;
     public String teamA;
     public String teamB;
     public String date;
