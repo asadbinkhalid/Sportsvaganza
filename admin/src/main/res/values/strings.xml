@@ -43,4 +43,6 @@
     <string name="date">Date</string>
     <string name="time">Time</string>
     <string name="done">Done</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
 </resources>

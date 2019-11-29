@@ -1,7 +1,14 @@
 package com.asad.businesslogic;
 
+
+
 public class Match {
-    private MatchState state;
+    public static final String SCHEDULED = "scheduled";
+    public static final String LIVE = "live";
+    public static final String ENDED = "ended";
+
+    //private MatchState state;
+    String state;
     private Team team1;
     private Team team2;
     private String date;
@@ -9,7 +16,7 @@ public class Match {
     private int winnerID;
 
     public Match(Team team1, Team team2, String date, String time) {
-        this.state = new Scheduled();
+        state = SCHEDULED;
         this.team1 = team1;
         this.team2 = team2;
         this.date = date;
@@ -17,12 +24,20 @@ public class Match {
         winnerID = 0;
     }
 
-    public String getState() {
-        return state.getState();
-    }
+//    public String getState() {
+//        return state.getState();
+//    }
+//
+//    public void setState(MatchState state) {
+//        this.state = state;
+//    }
 
-    public void setState(MatchState state) {
-        this.state = state;
+
+    public String getState() {
+        return this.state;
+    }
+    public void setState(String str){
+        this.state = str;
     }
 
     public Team getTeam1() {
@@ -57,10 +72,10 @@ public class Match {
         this.time = time;
     }
 
-    public void changeState(Match match)
-    {
-        state.changeState(this);
-    }
+//    public void changeState(Match match)
+//    {
+//        state.changeState(this);
+//    }
 
     public int getWinnerID() {
         return winnerID;

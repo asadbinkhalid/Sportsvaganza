@@ -9,17 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.asad.sportsvaganza.Models.CricketLiveModel;
+import com.asad.businesslogic.CricketMatch;
 import com.asad.sportsvaganza.R;
 
 import java.util.List;
 
 public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.CricketLiveViewHolder> {
 
-    private List<CricketLiveModel> cricketLiveModelList;
+    private List<CricketMatch> cricketLiveModelList;
     private Context context;
 
-    public CricketLiveAdapter(List<CricketLiveModel> cricketLiveModelList, Context context){
+    public CricketLiveAdapter(List<CricketMatch> cricketLiveModelList, Context context){
         this.cricketLiveModelList = cricketLiveModelList;
         this.context = context;
     }
@@ -34,12 +34,12 @@ public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull CricketLiveViewHolder holder, int position) {
-        holder.mteamA.setText(cricketLiveModelList.get(position).teamA);
-        holder.mteamB.setText(cricketLiveModelList.get(position).teamB);
-        holder.mruns.setText(Integer.toString(cricketLiveModelList.get(position).runs));
-        holder.mtarget.setText(Integer.toString(cricketLiveModelList.get(position).target));
-        holder.movers.setText(Integer.toString(cricketLiveModelList.get(position).overs));
-        holder.mwickets.setText(Integer.toString(cricketLiveModelList.get(position).wickets));
+        holder.mteamA.setText(cricketLiveModelList.get(position).getTeam1().getName());
+        holder.mteamB.setText(cricketLiveModelList.get(position).getTeam2().getName());
+        holder.mruns.setText(String.valueOf(cricketLiveModelList.get(position).getTeam1Runs()));
+        holder.mtarget.setText(String.valueOf(cricketLiveModelList.get(position).getTeam2Runs()));
+        holder.movers.setText(String.valueOf(cricketLiveModelList.get(position).getOvers()));
+        holder.mwickets.setText(String.valueOf(cricketLiveModelList.get(position).getWickets()));
     }
 
     @Override
