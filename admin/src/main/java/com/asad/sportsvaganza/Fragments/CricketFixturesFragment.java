@@ -10,8 +10,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.asad.businesslogic.CricketMatch;
+import com.asad.businesslogic.Main;
+import com.asad.businesslogic.Match;
 import com.asad.sportsvaganza.Adapters.CricketFixturesAdapter;
-import com.asad.sportsvaganza.Models.CricketFixturesModel;
 import com.asad.sportsvaganza.R;
 
 import java.util.ArrayList;
@@ -40,19 +42,21 @@ public class CricketFixturesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_cricket_fixtures, viewGroup, false);
         RecyclerView cricket_fixtures_list = view.findViewById(R.id.cricket_fixtures_list);
         cricket_fixtures_list.setLayoutManager(new LinearLayoutManager(getContext()));
-        cricket_fixtures_list.setAdapter(new CricketFixturesAdapter(feedItems(), getContext()));
+        cricket_fixtures_list.setAdapter(new CricketFixturesAdapter(getMatches(Main.getInstance().getCricketMatchesList()), getContext()));
 
 
         return view;
     }
 
-    private List<CricketFixturesModel> feedItems(){
-        List<CricketFixturesModel> demoItems = new ArrayList<>();
-        demoItems.add(new CricketFixturesModel("Team A", "Team B", "15:00", "21/2/2019"));
-        demoItems.add(new CricketFixturesModel("Team C", "Team D", "17:00", "21/2/2019"));
-        demoItems.add(new CricketFixturesModel("Team E", "Team F", "17:00", "22/2/2019"));
-        demoItems.add(new CricketFixturesModel("Team X", "Team Y", "18:00", "22/2/2019"));
+    private List<CricketMatch> getMatches(List<CricketMatch> matchesList){
+        List<CricketMatch> scheduledMatches = new ArrayList<>();
 
-        return demoItems;
+        for(int i=0;i<matchesList.size();i++){
+            if(matchesList.get(i).getState().equals(Match.SCHEDULED)){
+                scheduledMatches.add(matchesList.get(i));
+            }
+        }
+
+        return scheduledMatches;
     }
 }

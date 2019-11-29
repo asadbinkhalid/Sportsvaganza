@@ -11,13 +11,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.businesslogic.FootballMatch;
-import com.asad.businesslogic.Team;
+import com.asad.businesslogic.Main;
+import com.asad.businesslogic.Match;
 import com.asad.sportsvaganza.Adapters.FootballFixturesAdapter;
 import com.asad.sportsvaganza.R;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class FootballFixturesFragment extends Fragment {
 
@@ -42,18 +42,20 @@ public class FootballFixturesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_football_fixtures, viewGroup, false);
         RecyclerView football_fixtures_list = view.findViewById(R.id.football_fixtures_list);
         football_fixtures_list.setLayoutManager(new LinearLayoutManager(getContext()));
-        football_fixtures_list.setAdapter(new FootballFixturesAdapter(feedItems(), getContext()));
+        football_fixtures_list.setAdapter(new FootballFixturesAdapter(getMatches(Main.getInstance().getFootballMatchesList()), getContext()));
 
         return view;
     }
 
-    private List<FootballMatch> feedItems(){
-        List<FootballMatch> demoItems = new ArrayList<>();
-//        demoItems.add(new FootballFixturesModel("Team A", "Team B", "15:00", "21/2/2019"));
-//        demoItems.add(new FootballFixturesModel("Team C", "Team D", "15:30", "21/2/2019"));
-//        demoItems.add(new FootballFixturesModel("Team Y", "Team Z", "16:00", "21/2/2019"));
-        demoItems.add(new FootballMatch(new Team("pres11"), new Team("fepres11"), "123", "12", 0, 0));
+    private List<FootballMatch> getMatches(List<FootballMatch> matchesList){
+        List<FootballMatch> scheduledMatches = new ArrayList<>();
 
-        return demoItems;
+        for(int i=0;i<matchesList.size();i++){
+            if(matchesList.get(i).getState().equals(Match.SCHEDULED)){
+                scheduledMatches.add(matchesList.get(i));
+            }
+        }
+
+        return scheduledMatches;
     }
 }

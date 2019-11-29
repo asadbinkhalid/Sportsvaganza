@@ -11,7 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.businesslogic.FootballMatch;
-import com.asad.businesslogic.Team;
+import com.asad.businesslogic.Main;
+import com.asad.businesslogic.Match;
 import com.asad.sportsvaganza.Adapters.FootballLiveAdapter;
 import com.asad.sportsvaganza.R;
 
@@ -41,18 +42,21 @@ public class FootballLiveFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_football_live, viewGroup, false);
         RecyclerView football_live_list = view.findViewById(R.id.football_live_list);
         football_live_list.setLayoutManager(new LinearLayoutManager(getContext()));
-        football_live_list.setAdapter(new FootballLiveAdapter(feedItems(), getContext()));
+        football_live_list.setAdapter(new FootballLiveAdapter(getMatches(Main.getInstance().getFootballMatchesList()), getContext()));
         
         return view;
     }
 
-    private List<FootballMatch> feedItems(){
-        List<FootballMatch> demoItems = new ArrayList<>();
-//        demoItems.add(new FootballLiveModel("Team A", "Team B", "1", "0"));
-//        demoItems.add(new FootballLiveModel("Team C", "Team D", "0", "0"));
-        demoItems.add(new FootballMatch(new Team("khawaja11"), new Team("Asad11"), "12345time", "12345date", 0, 2));
+    private List<FootballMatch> getMatches(List<FootballMatch> matchesList){
+        List<FootballMatch> scheduledMatches = new ArrayList<>();
 
-        return demoItems;
+        for(int i=0;i<matchesList.size();i++){
+            if(matchesList.get(i).getState().equals(Match.LIVE)){
+                scheduledMatches.add(matchesList.get(i));
+            }
+        }
+
+        return scheduledMatches;
     }
 
 }

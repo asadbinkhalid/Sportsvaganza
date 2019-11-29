@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.asad.sportsvaganza.Models.FootballResultsModel;
+import com.asad.businesslogic.FootballMatch;
 import com.asad.sportsvaganza.R;
 
 
@@ -17,10 +17,10 @@ import java.util.List;
 
 public class FootballResultsAdapter extends RecyclerView.Adapter<FootballResultsAdapter.FootballResultsViewHolder> {
 
-    private List<FootballResultsModel> footballResultsModelList;
+    private List<FootballMatch> footballResultsModelList;
     private Context context;
 
-    public FootballResultsAdapter(List<FootballResultsModel> footballResultsModelList, Context context){
+    public FootballResultsAdapter(List<FootballMatch> footballResultsModelList, Context context){
         this.footballResultsModelList = footballResultsModelList;
         this.context = context;
     }
@@ -35,12 +35,12 @@ public class FootballResultsAdapter extends RecyclerView.Adapter<FootballResults
 
     @Override
     public void onBindViewHolder(@NonNull FootballResultsViewHolder holder, int position) {
-        holder.mteamA1.setText(footballResultsModelList.get(position).teamA1);
-        holder.mteamB1.setText(footballResultsModelList.get(position).teamB1);
-        holder.mtime1.setText(footballResultsModelList.get(position).time1);
-        holder.mdate1.setText(footballResultsModelList.get(position).date1);
-        holder.mscoreA1.setText(footballResultsModelList.get(position).scoreA1);
-        holder.mscoreB1.setText(footballResultsModelList.get(position).scoreB1);
+        holder.mteamA1.setText(footballResultsModelList.get(position).getTeam1().getName());
+        holder.mteamB1.setText(footballResultsModelList.get(position).getTeam2().getName());
+        holder.mtime1.setText(footballResultsModelList.get(position).getTime());
+        holder.mdate1.setText(footballResultsModelList.get(position).getDate());
+        holder.mscoreA1.setText(String.valueOf(footballResultsModelList.get(position).getTeam1Score()));
+        holder.mscoreB1.setText(String.valueOf(footballResultsModelList.get(position).getTeam2Score()));
     }
 
     @Override

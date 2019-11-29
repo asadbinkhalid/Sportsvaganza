@@ -10,10 +10,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.asad.sportsvaganza.Adapters.CricketFixturesAdapter;
+import com.asad.businesslogic.CricketMatch;
+import com.asad.businesslogic.Main;
+import com.asad.businesslogic.Match;
 import com.asad.sportsvaganza.Adapters.CricketLiveAdapter;
-import com.asad.sportsvaganza.Adapters.FootballFixturesAdapter;
-import com.asad.sportsvaganza.Models.CricketLiveModel;
 import com.asad.sportsvaganza.R;
 
 import java.util.ArrayList;
@@ -43,16 +43,20 @@ public class CricketLiveFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_cricket_live, viewGroup, false);
         RecyclerView cricket_live_list = view.findViewById(R.id.cricket_live_list);
         cricket_live_list.setLayoutManager(new LinearLayoutManager(getContext()));
-        cricket_live_list.setAdapter(new CricketLiveAdapter(feedItems(), getContext()));
+        cricket_live_list.setAdapter(new CricketLiveAdapter(getMatches(Main.getInstance().getCricketMatchesList()), getContext()));
 
         return view;
     }
 
-    private List<CricketLiveModel> feedItems(){
-        List<CricketLiveModel> demoItems = new ArrayList<>();
-        demoItems.add(new CricketLiveModel("Team A", "Team B", 112, 58, 3, 6));
-        demoItems.add(new CricketLiveModel("Team C", "Team D", 90, 30, 5, 7));
+    private List<CricketMatch> getMatches(List<CricketMatch> matchesList){
+        List<CricketMatch> scheduledMatches = new ArrayList<>();
 
-        return demoItems;
+        for(int i=0;i<matchesList.size();i++){
+            if(matchesList.get(i).getState().equals(Match.LIVE)){
+                scheduledMatches.add(matchesList.get(i));
+            }
+        }
+
+        return scheduledMatches;
     }
 }

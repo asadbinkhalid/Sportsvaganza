@@ -10,8 +10,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.asad.businesslogic.FootballMatch;
+import com.asad.businesslogic.Main;
+import com.asad.businesslogic.Match;
 import com.asad.sportsvaganza.Adapters.FootballResultsAdapter;
-import com.asad.sportsvaganza.Models.FootballResultsModel;
 import com.asad.sportsvaganza.R;
 
 import java.util.ArrayList;
@@ -40,19 +42,22 @@ public class FootballResultsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_football_results, viewGroup, false);
         RecyclerView football_results_list = view.findViewById(R.id.football_results_list);
         football_results_list.setLayoutManager(new LinearLayoutManager(getContext()));
-        football_results_list.setAdapter(new FootballResultsAdapter(feedItems(), getContext()));
+        football_results_list.setAdapter(new FootballResultsAdapter(getMatches(Main.getInstance().getFootballMatchesList()), getContext()));
 
 
         return view;
     }
 
-    private List<FootballResultsModel> feedItems(){
-        List<FootballResultsModel> demoItems = new ArrayList<>();
-        demoItems.add(new FootballResultsModel("Team A", "Team B", "1", "0", "15:00", "21/2/2019"));
-        demoItems.add(new FootballResultsModel("Team C", "Team D", "2", "2","15:30", "21/2/2019"));
-        demoItems.add(new FootballResultsModel("Team Y", "Team Z", "1", "3","16:00", "21/2/2019"));
+    private List<FootballMatch> getMatches(List<FootballMatch> matchesList){
+        List<FootballMatch> scheduledMatches = new ArrayList<>();
 
-        return demoItems;
+        for(int i=0;i<matchesList.size();i++){
+            if(matchesList.get(i).getState().equals(Match.ENDED)){
+                scheduledMatches.add(matchesList.get(i));
+            }
+        }
+
+        return scheduledMatches;
     }
 
 }
