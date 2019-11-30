@@ -13,6 +13,8 @@ import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.asad.businesslogic.FootballMatch;
+import com.asad.businesslogic.Team;
 import com.asad.sportsvaganza.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -20,6 +22,8 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Activity_Login_Main extends AppCompatActivity {
 
@@ -58,7 +62,12 @@ public class Activity_Login_Main extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-
+                                        DatabaseReference reff;
+                                        reff = FirebaseDatabase.getInstance().getReference().child("FootballMatch");
+                                        FootballMatch myTest1 = new FootballMatch(new Team("Fast XI"),new Team("Lums XI"),"30/11/19","08:30",8,2);
+                                        FootballMatch myTest2 = new FootballMatch(new Team("BNU XI"),new Team("UCP XI"),"27/11/19","11:30",2,0);
+                                        reff.push().setValue(myTest1);
+                                        reff.push().setValue(myTest2);
                                         Intent intent = new Intent(Activity_Login_Main.this, Activity2_gamesList.class);
                                         startActivity(intent);
                                     }
