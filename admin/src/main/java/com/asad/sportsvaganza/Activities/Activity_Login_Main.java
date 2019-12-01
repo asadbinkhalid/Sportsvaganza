@@ -62,12 +62,6 @@ public class Activity_Login_Main extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        DatabaseReference reff;
-                                        reff = FirebaseDatabase.getInstance().getReference().child("FootballMatch");
-                                        FootballMatch myTest1 = new FootballMatch(new Team("Fast XI"),new Team("Lums XI"),"30/11/19","08:30",8,2);
-                                        FootballMatch myTest2 = new FootballMatch(new Team("BNU XI"),new Team("UCP XI"),"27/11/19","11:30",2,0);
-                                        reff.push().setValue(myTest1);
-                                        reff.push().setValue(myTest2);
                                         Intent intent = new Intent(Activity_Login_Main.this, Activity2_gamesList.class);
                                         startActivity(intent);
                                     }

@@ -20,6 +20,9 @@ public class Activity4_cricket_addMatch extends AppCompatActivity {
         cricket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
                 Intent intent = new Intent(Activity4_cricket_addMatch.this, Activity3_cricket_main.class);
                 startActivity(intent);
             }

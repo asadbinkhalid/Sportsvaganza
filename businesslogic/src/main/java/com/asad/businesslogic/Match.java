@@ -23,6 +23,10 @@ public class Match {
         this.time = time;
         winnerID = 0;
     }
+    public Match()
+    {
+
+    }
 
 //    public String getState() {
 //        return state.getState();

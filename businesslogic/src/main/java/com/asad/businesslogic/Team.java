@@ -7,6 +7,7 @@ public class Team extends User {
         this.name = name;
     }
 
+    public Team(){}
     public String getName() {
         return name;
     }

@@ -9,6 +9,17 @@ public class FootballMatch extends Match {
         this.team1Score = team1Score;
         this.team2Score = team2Score;
     }
+    public FootballMatch()
+    {
+        super();
+
+    }
+
+    public FootballMatch(FootballMatch value) {
+        super(value.getTeam1(),value.getTeam2(),value.getDate(),value.getTime());
+        team1Score = value.team1Score;
+        team1Score = value.team1Score;
+    }
 
     public int getTeam1Score() {
         return team1Score;
