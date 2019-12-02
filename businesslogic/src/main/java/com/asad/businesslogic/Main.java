@@ -205,8 +205,6 @@ public class Main {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-
-
         });
     }
 
