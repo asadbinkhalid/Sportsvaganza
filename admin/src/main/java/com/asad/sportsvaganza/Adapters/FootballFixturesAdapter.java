@@ -14,6 +14,7 @@ import com.asad.businesslogic.FootballMatch;
 import com.asad.businesslogic.Main;
 import com.asad.businesslogic.Globals;
 import com.asad.businesslogic.Match;
+import com.asad.sportsvaganza.Activities.Activity3_football_main;
 import com.asad.sportsvaganza.R;
 
 import java.util.List;
@@ -47,8 +48,19 @@ public class FootballFixturesAdapter extends RecyclerView.Adapter<FootballFixtur
             @Override
             public void onClick(View v) {
                 footballFixturesModelList.get(position).setState(Match.LIVE);
-                Main.getInstance().updateFootballToLive(footballFixturesModelList.get(position));
+                //Main.getInstance().updateFootballToLive(footballFixturesModelList.get(position));
+                //Main.getInstance().initiateFootballMatches();
+
+                ((Activity3_football_main) context).startMatchVIAService(footballFixturesModelList.get(position));
+
+//                Intent intent = new Intent(context, UpdateFootballToLiveService.class);
+////                Intent intent = new Intent(context.getApplicationContext(), UpdateFootballToLiveService.class);
+//                intent.putExtra("footballMatch", footballFixturesModelList.get(position));
+//
+//                startService(intent);
+
                 Main.getInstance().initiateFootballMatches();
+
                 notifyItemChanged(position);
                 Globals.refresh = true;
             }
