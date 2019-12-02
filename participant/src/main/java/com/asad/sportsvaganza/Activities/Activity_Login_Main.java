@@ -12,6 +12,8 @@ import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.asad.businesslogic.Globals;
+import com.asad.businesslogic.Main;
 import com.asad.sportsvaganza.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -57,6 +59,8 @@ public class Activity_Login_Main extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
 
+                                        Main.getInstance();
+                                        Globals.isLogin = true;
                                         Intent intent = new Intent(Activity_Login_Main.this, Activity2_gamesList.class);
                                         startActivity(intent);
                                     }

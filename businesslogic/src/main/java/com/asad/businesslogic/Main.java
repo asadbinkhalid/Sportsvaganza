@@ -42,7 +42,7 @@ public class Main {
 //    }
 
     public void initiateFootballMatches(){
-        DatabaseReference reff;
+        final DatabaseReference reff;
         reff = FirebaseDatabase.getInstance().getReference("FootballMatch");
         reff.addValueEventListener(new ValueEventListener() {
             @Override
@@ -51,6 +51,87 @@ public class Main {
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
                     FootballMatch tempObj = new FootballMatch(postSnapshot.getValue(FootballMatch.class));
                     footballMatches.add(tempObj);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+
+
+        });
+    }
+
+    public void updateFootballToLive(final FootballMatch tempFootballMatch)
+    {
+        final DatabaseReference reff;
+        reff = FirebaseDatabase.getInstance().getReference("FootballMatch");
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                //footballMatches.clear();
+                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+
+                    final String key=postSnapshot.getKey();
+                    reff.child(key).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                            FootballMatch f=dataSnapshot.getValue(FootballMatch.class);
+
+                            if(f.getMatchID().equals(tempFootballMatch.getMatchID()))
+                            {
+                                reff.child(key).child("state").setValue(Match.LIVE);
+                            }
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+
+
+        });
+    }
+
+    public void updateFootballToEnded(final FootballMatch tempFootballMatch) {
+        final DatabaseReference reff;
+        reff = FirebaseDatabase.getInstance().getReference("FootballMatch");
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                //footballMatches.clear();
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+
+                    final String key = postSnapshot.getKey();
+                    reff.child(key).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                            FootballMatch f = dataSnapshot.getValue(FootballMatch.class);
+
+                            if (f.getMatchID().equals(tempFootballMatch.getMatchID())) {
+                                reff.child(key).child("state").setValue(Match.ENDED);
+                            }
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
                 }
             }
 

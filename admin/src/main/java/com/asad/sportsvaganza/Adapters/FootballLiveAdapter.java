@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.businesslogic.FootballMatch;
+import com.asad.businesslogic.Main;
 import com.asad.businesslogic.Match;
 import com.asad.sportsvaganza.Activities.Activity3_football_main;
 import com.asad.sportsvaganza.R;
@@ -46,7 +47,8 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
             @Override
             public void onClick(View v) {
                 footballLiveModelList.get(position).setState(Match.ENDED);
-                //refreshActivity();
+                Main.getInstance().updateFootballToEnded  (footballLiveModelList.get(position));
+                Main.getInstance().initiateFootballMatches();
             }
         });
     }
