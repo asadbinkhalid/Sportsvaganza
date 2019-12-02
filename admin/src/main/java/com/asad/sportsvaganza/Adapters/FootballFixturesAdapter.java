@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.businesslogic.FootballMatch;
 import com.asad.businesslogic.Main;
+import com.asad.businesslogic.Globals;
 import com.asad.businesslogic.Match;
 import com.asad.sportsvaganza.R;
 
@@ -41,23 +42,17 @@ public class FootballFixturesAdapter extends RecyclerView.Adapter<FootballFixtur
         holder.mteamB.setText(footballFixturesModelList.get(position).getTeam2().getName());
         holder.mtime.setText(footballFixturesModelList.get(position).getTime());
         holder.mdate.setText(footballFixturesModelList.get(position).getDate());
-//        holder.startButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                footballFixturesModelList.get(position).setState(Match.LIVE);
-//            });
-//
-//
-//        }
+
         holder.startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 footballFixturesModelList.get(position).setState(Match.LIVE);
                 Main.getInstance().updateFootballToLive(footballFixturesModelList.get(position));
                 Main.getInstance().initiateFootballMatches();
+                notifyItemChanged(position);
+                Globals.refresh = true;
             }
         });
-
     }
 
     @Override

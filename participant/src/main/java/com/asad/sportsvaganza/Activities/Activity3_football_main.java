@@ -6,12 +6,15 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.asad.sportsvaganza.Fragments.FootballLiveFragment;
 import com.asad.sportsvaganza.Fragments.FootballResultsFragment;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.rhexgomez.typer.roboto.TyperRoboto;
 import com.asad.sportsvaganza.Adapters.ViewPagerAdapter;
 import com.asad.sportsvaganza.R;
@@ -62,9 +65,6 @@ public class Activity3_football_main extends AppCompatActivity {
         mViewPager.setAdapter(mViewPagerAdapter);
         tabLayout.setupWithViewPager(mViewPager);
 
-
-
-
     }
 
     @Override
@@ -72,5 +72,27 @@ public class Activity3_football_main extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.button_logout) {
+            FirebaseAuth.getInstance().signOut();
+
+            Intent i = new Intent(this, Activity_Login_Main.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            Toast.makeText(getApplicationContext(), "Logged Out!", Toast.LENGTH_LONG).show();
+            //Globals.isLogin = false;
+            finish();
+
+
+            startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

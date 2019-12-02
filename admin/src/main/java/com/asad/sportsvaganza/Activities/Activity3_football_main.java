@@ -1,19 +1,22 @@
 package com.asad.sportsvaganza.Activities;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.Toast;
 
-import com.asad.businesslogic.Main;
 import com.asad.businesslogic.Globals;
 import com.asad.sportsvaganza.Fragments.FootballLiveFragment;
 import com.asad.sportsvaganza.Fragments.FootballResultsFragment;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.rhexgomez.typer.roboto.TyperRoboto;
 import com.asad.sportsvaganza.Adapters.ViewPagerAdapter;
 import com.asad.sportsvaganza.R;
@@ -22,6 +25,8 @@ import com.asad.sportsvaganza.Fragments.FootballFixturesFragment;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.OnLifecycleEvent;
 import androidx.viewpager.widget.ViewPager;
 
 import java.util.Objects;
@@ -29,14 +34,12 @@ import java.util.Objects;
 
 public class Activity3_football_main extends AppCompatActivity {
     TabLayout tabLayout;
+
     @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if(!Globals.isLogin){
-            this.onDestroy();
-        }
-        super.onCreate(savedInstanceState);
 
+        super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity3_football_scrollingtabs);
         tabLayout = findViewById(R.id.tabs);
@@ -77,24 +80,8 @@ public class Activity3_football_main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
-    @Override
-    protected void onRestart() {
-        if(!Globals.isLogin){
-            this.onDestroy();
-        }
-        super.onRestart();
-    }
-
-    @Override
-    protected void onResume() {
-        if(!Globals.isLogin){
-            this.onDestroy();
-        }
-        super.onResume();
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -103,9 +90,40 @@ public class Activity3_football_main extends AppCompatActivity {
         return true;
     }
 
-    public void refreshActivity(){
-        Intent refresh = new Intent(this, Activity3_football_main.class);
-        startActivity(refresh);
-        this.finish();
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.button_logout) {
+            FirebaseAuth.getInstance().signOut();
+
+            Intent i = new Intent(this, Activity_Login_Main.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            Toast.makeText(getApplicationContext(), "Logged Out!", Toast.LENGTH_LONG).show();
+            //Globals.isLogin = false;
+            finish();
+
+
+            startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
     }
+
+
+
+
+    public void refreshActivity(){
+//        Intent refresh = new Intent(this, Activity3_football_main.class);
+//        startActivity(refresh);
+//        this.finish();
+
+        finish();
+        overridePendingTransition(0, 0);
+        startActivity(getIntent());
+        overridePendingTransition(0, 0);
+    }
+
 }
