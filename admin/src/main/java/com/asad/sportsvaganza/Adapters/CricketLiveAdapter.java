@@ -4,12 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.businesslogic.CricketMatch;
+import com.asad.businesslogic.Match;
 import com.asad.sportsvaganza.R;
 
 import java.util.List;
@@ -33,13 +35,19 @@ public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CricketLiveViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CricketLiveViewHolder holder, final int position) {
         holder.mteamA.setText(cricketLiveModelList.get(position).getTeam1().getName());
         holder.mteamB.setText(cricketLiveModelList.get(position).getTeam2().getName());
         holder.mruns.setText(String.valueOf(cricketLiveModelList.get(position).getTeam1Runs()));
         holder.mtarget.setText(String.valueOf(cricketLiveModelList.get(position).getTeam2Runs()));
         holder.movers.setText(String.valueOf(cricketLiveModelList.get(position).getOvers()));
         holder.mwickets.setText(String.valueOf(cricketLiveModelList.get(position).getWickets()));
+        holder.endButton.setOnClickListener(new View.OnClickListener() {
+        public void onClick(View v) {
+            cricketLiveModelList.get(position).setState(Match.ENDED);
+            //refreshActivity();
+        }
+    });
     }
 
     @Override
@@ -54,6 +62,7 @@ public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.
         TextView mtarget;
         TextView movers;
         TextView mwickets;
+        Button endButton;
 
         public CricketLiveViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -63,6 +72,7 @@ public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.
             mtarget = itemView.findViewById(R.id.textView_targetScore);
             movers = itemView.findViewById(R.id.textView_over);
             mwickets = itemView.findViewById(R.id.textView_wickets);
+            endButton = itemView.findViewById(R.id.button2);
         }
     }
 

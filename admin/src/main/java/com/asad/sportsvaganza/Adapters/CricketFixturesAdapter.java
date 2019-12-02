@@ -4,14 +4,22 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.businesslogic.CricketMatch;
+import com.asad.businesslogic.FootballMatch;
+import com.asad.businesslogic.Match;
 import com.asad.sportsvaganza.R;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -35,11 +43,18 @@ public class CricketFixturesAdapter extends RecyclerView.Adapter<CricketFixtures
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CricketFixturesViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CricketFixturesViewHolder holder, final int position) {
         holder.mteamA.setText(cricketFixturesModelList.get(position).getTeam1().getName());
         holder.mteamB.setText(cricketFixturesModelList.get(position).getTeam2().getName());
         holder.mtime.setText(cricketFixturesModelList.get(position).getTime());
         holder.mdate.setText(cricketFixturesModelList.get(position).getDate());
+
+        holder.startButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cricketFixturesModelList.get(position).setState(Match.LIVE);
+            }
+        });
     }
 
     @Override
@@ -52,12 +67,14 @@ public class CricketFixturesAdapter extends RecyclerView.Adapter<CricketFixtures
         TextView mteamB;
         TextView mdate;
         TextView mtime;
+        Button startButton;
         public CricketFixturesViewHolder(@NonNull View itemView) {
             super(itemView);
             mteamA = itemView.findViewById(R.id.textView_teamAName4);
             mteamB = itemView.findViewById(R.id.textView_teamBName4);
             mdate = itemView.findViewById(R.id.match_date4);
             mtime = itemView.findViewById(R.id.text_matchTime4);
+            startButton = itemView.findViewById(R.id.button);
         }
     }
 

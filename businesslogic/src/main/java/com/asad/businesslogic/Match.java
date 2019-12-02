@@ -26,6 +26,16 @@ public class Match {
         matchID = ID;
     }
 
+    public Match(Team team1, Team team2, String date, String time,String ID,String tempState) {
+        state = tempState;
+        this.team1 = team1;
+        this.team2 = team2;
+        this.date = date;
+        this.time = time;
+        winnerID = 0;
+        matchID = ID;
+    }
+
     public String getMatchID() {
         return matchID;
     }

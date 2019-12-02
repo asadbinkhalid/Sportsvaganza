@@ -16,7 +16,7 @@ public class FootballMatch extends Match {
     }
 
     public FootballMatch(FootballMatch value) {
-        super(value.getTeam1(),value.getTeam2(),value.getDate(),value.getTime(),value.getMatchID());
+        super(value.getTeam1(),value.getTeam2(),value.getDate(),value.getTime(),value.getMatchID(),value.getState());
         team1Score = value.team1Score;
         team1Score = value.team1Score;
     }
