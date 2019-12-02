@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.text.TextUtils;
@@ -20,6 +21,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Activity_Login_Main extends AppCompatActivity {
 
@@ -59,6 +68,29 @@ public class Activity_Login_Main extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
 
+                                        Retrofit retrofit = new Retrofit.Builder()
+                                                .baseUrl(Api.BASE_URL)
+                                                .addConverterFactory(GsonConverterFactory.create()) //Here we are using the GsonConverterFactory to directly convert json data to object
+                                                .build();
+                                        Api api = retrofit.create(Api.class);
+                                        Call<List<Hero>> call = api.getHeros();
+                                        call.enqueue(new Callback<List<Hero>>() {
+                                            @Override
+                                            public void onResponse(Call<List<Hero>> call, Response<List<Hero>> response) {
+
+                                                List<Hero> heroList = response.body();
+                                                for (Hero h: heroList)
+                                                {
+                                                    Log.d("name",h.getName());
+                                                }
+
+                                            }
+
+                                            @Override
+                                            public void onFailure(Call<List<Hero>> call, Throwable t) {
+
+                                            }
+                                        });
                                         Main.getInstance();
                                         Globals.isLogin = true;
                                         Intent intent = new Intent(Activity_Login_Main.this, Activity2_gamesList.class);
