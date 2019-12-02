@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.asad.businesslogic.Main;
+import com.asad.businesslogic.Globals;
 import com.asad.sportsvaganza.Fragments.FootballLiveFragment;
 import com.asad.sportsvaganza.Fragments.FootballResultsFragment;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -31,6 +32,9 @@ public class Activity3_football_main extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if(!Globals.isLogin){
+            this.onDestroy();
+        }
         super.onCreate(savedInstanceState);
 
 
@@ -74,6 +78,22 @@ public class Activity3_football_main extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onRestart() {
+        if(!Globals.isLogin){
+            this.onDestroy();
+        }
+        super.onRestart();
+    }
+
+    @Override
+    protected void onResume() {
+        if(!Globals.isLogin){
+            this.onDestroy();
+        }
+        super.onResume();
     }
 
     @Override

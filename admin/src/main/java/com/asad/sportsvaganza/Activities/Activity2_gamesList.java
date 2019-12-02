@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.asad.businesslogic.Main;
+import com.asad.businesslogic.Globals;
 import com.asad.sportsvaganza.R;
 
 public class Activity2_gamesList extends AppCompatActivity {
@@ -17,6 +18,9 @@ public class Activity2_gamesList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity2_games_list);
 
+        if(!Globals.isLogin){
+            this.onDestroy();
+        }
 
         Button football = findViewById(R.id.button_football);
         football.setOnClickListener(new View.OnClickListener() {
@@ -36,5 +40,21 @@ public class Activity2_gamesList extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        if(!Globals.isLogin){
+            this.onDestroy();
+        }
+        super.onResume();
+    }
+
+    @Override
+    protected void onRestart() {
+        if(!Globals.isLogin){
+            this.onDestroy();
+        }
+        super.onRestart();
     }
 }

@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
+import com.asad.businesslogic.Globals;
 import com.asad.sportsvaganza.Fragments.CricketFixturesFragment;
 import com.asad.sportsvaganza.Fragments.CricketLiveFragment;
 
@@ -33,6 +34,11 @@ public class Activity3_cricket_main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity3_cricket_scrollingtabs);
+
+        if(!Globals.isLogin){
+            this.onDestroy();
+        }
+
         tabLayout = findViewById(R.id.tabs);
         Toolbar toolbar = findViewById(R.id.toolbarCricket);
         ViewPager mViewPager = findViewById(R.id.viewpager2);
@@ -72,6 +78,22 @@ public class Activity3_cricket_main extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onRestart() {
+        if(!Globals.isLogin){
+            this.onDestroy();
+        }
+        super.onRestart();
+    }
+
+    @Override
+    protected void onResume() {
+        if(!Globals.isLogin){
+            this.onDestroy();
+        }
+        super.onResume();
     }
 
     @Override
