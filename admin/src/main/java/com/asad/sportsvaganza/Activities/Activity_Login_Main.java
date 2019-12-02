@@ -65,13 +65,12 @@ public class Activity_Login_Main extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         Main.getInstance();
-                                        Globals.isLogin = true;
+
                                         Intent intent = new Intent(Activity_Login_Main.this, Activity2_gamesList.class);
                                         startActivity(intent);
                                     }
                                     else {
                                         Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
-
                                     }
                                 }
                             });

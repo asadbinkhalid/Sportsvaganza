@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -17,10 +18,6 @@ public class Activity2_gamesList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity2_games_list);
-
-        if(!Globals.isLogin){
-            this.onDestroy();
-        }
 
         Button football = findViewById(R.id.button_football);
         football.setOnClickListener(new View.OnClickListener() {
@@ -40,21 +37,5 @@ public class Activity2_gamesList extends AppCompatActivity {
             }
         });
 
-    }
-
-    @Override
-    protected void onResume() {
-        if(!Globals.isLogin){
-            this.onDestroy();
-        }
-        super.onResume();
-    }
-
-    @Override
-    protected void onRestart() {
-        if(!Globals.isLogin){
-            this.onDestroy();
-        }
-        super.onRestart();
     }
 }

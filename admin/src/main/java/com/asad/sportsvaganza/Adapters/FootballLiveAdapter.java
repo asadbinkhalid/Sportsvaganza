@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.businesslogic.FootballMatch;
+import com.asad.businesslogic.Globals;
 import com.asad.businesslogic.Match;
 import com.asad.sportsvaganza.Activities.Activity3_football_main;
 import com.asad.sportsvaganza.R;
@@ -42,11 +43,12 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
         holder.mteamB3.setText(footballLiveModelList.get(position).getTeam2().getName());
         holder.mscoreA3.setText(String.valueOf(footballLiveModelList.get(position).getTeam1Score()));
         holder.mscoreB3.setText(String.valueOf(footballLiveModelList.get(position).getTeam2Score()));
+
         holder.endButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 footballLiveModelList.get(position).setState(Match.ENDED);
-                //refreshActivity();
+                Globals.refresh = true;
             }
         });
     }
