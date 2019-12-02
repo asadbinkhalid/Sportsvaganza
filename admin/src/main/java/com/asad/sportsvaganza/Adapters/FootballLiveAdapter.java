@@ -1,7 +1,6 @@
 package com.asad.sportsvaganza.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,17 +48,59 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
             @Override
             public void onClick(View v) {
                 footballLiveModelList.get(position).setState(Match.ENDED);
-                //Main.getInstance().updateFootballToEnded  (footballLiveModelList.get(position));
-                Main.getInstance().initiateFootballMatches();
 
-                ((Activity3_football_main) context).endMatchVIAService(footballLiveModelList.get(position));
+                ((Activity3_football_main) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
+                //Main.getInstance().initiateFootballMatches();
 
-
-
-                notifyItemChanged(position);
+                //notifyItemChanged(position);
                 Globals.refresh = true;
             }
         });
+        holder.addTeam1ScoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                footballLiveModelList.get(position).setTeam1Score(footballLiveModelList.get(position).getTeam1Score() + 1);
+
+                ((Activity3_football_main) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
+                //Main.getInstance().initiateFootballMatches();
+
+//                notifyItemChanged(position);
+            }
+        });
+        holder.addTeam2ScoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                footballLiveModelList.get(position).setTeam2Score(footballLiveModelList.get(position).getTeam2Score() + 1);
+
+                ((Activity3_football_main) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
+                //Main.getInstance().initiateFootballMatches();
+
+//                notifyItemChanged(position);
+            }
+        });
+        holder.subTeam1ScoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                footballLiveModelList.get(position).setTeam1Score(footballLiveModelList.get(position).getTeam1Score() - 1);
+
+                ((Activity3_football_main) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
+                //Main.getInstance().initiateFootballMatches();
+
+//                notifyItemChanged(position);
+            }
+        });
+        holder.subTeam2ScoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                footballLiveModelList.get(position).setTeam2Score(footballLiveModelList.get(position).getTeam2Score() - 1);
+
+                ((Activity3_football_main) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
+                //Main.getInstance().initiateFootballMatches();
+
+//                notifyItemChanged(position);
+            }
+        });
+
     }
 
     @Override
@@ -73,6 +114,11 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
         TextView mscoreA3;
         TextView mscoreB3;
         Button endButton;
+        Button addTeam1ScoreButton;
+        Button addTeam2ScoreButton;
+        Button subTeam1ScoreButton;
+        Button subTeam2ScoreButton;
+
 
         public FootballLiveViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -81,6 +127,10 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
             mscoreA3 = itemView.findViewById(R.id.textView_scoreA3);
             mscoreB3 = itemView.findViewById(R.id.textView_scoreB3);
             endButton = itemView.findViewById(R.id.button3);
+            addTeam1ScoreButton = itemView.findViewById(R.id.button4);
+            addTeam2ScoreButton = itemView.findViewById(R.id.button7);
+            subTeam1ScoreButton = itemView.findViewById(R.id.button5);
+            subTeam2ScoreButton = itemView.findViewById(R.id.button6);
         }
     }
 

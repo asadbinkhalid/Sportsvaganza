@@ -27,7 +27,7 @@ public class Match implements Serializable {
         matchID = ID;
     }
 
-    public Match(Team team1, Team team2, String date, String time,String ID,String tempState) {
+    public Match(Team team1, Team team2, String date, String time, String ID, String tempState) {
         state = tempState;
         this.team1 = team1;
         this.team2 = team2;
