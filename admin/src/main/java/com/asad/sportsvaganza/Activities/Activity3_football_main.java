@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
+import com.asad.businesslogic.Main;
 import com.asad.sportsvaganza.Fragments.FootballLiveFragment;
 import com.asad.sportsvaganza.Fragments.FootballResultsFragment;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -31,6 +32,8 @@ public class Activity3_football_main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity3_football_scrollingtabs);
         tabLayout = findViewById(R.id.tabs);
         Toolbar toolbar = findViewById(R.id.toolbar1);
@@ -78,5 +81,11 @@ public class Activity3_football_main extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
         return true;
+    }
+
+    public void refreshActivity(){
+        Intent refresh = new Intent(this, Activity3_football_main.class);
+        startActivity(refresh);
+        this.finish();
     }
 }

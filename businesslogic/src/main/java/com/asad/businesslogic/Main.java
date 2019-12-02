@@ -69,13 +69,13 @@ public class Main {
         Team khawaja = new Team("Khawaja 11");
         String time1 = "14:30";
         String date1 = "02/10/2019";
-        CricketMatch match1 = new CricketMatch(asad, khawaja, time1, date1, 0, 0, 0, 0);
+        CricketMatch match1 = new CricketMatch(asad, khawaja, time1, date1, 0, 0, 0, 0,"true1");
 
         Team asad1 = new Team("FAST 11");
         Team khawaja1 = new Team("LUMS 11");
         String time2 = "15:00";
         String date2 = "02/10/2019";
-        CricketMatch match2 = new CricketMatch(asad1, khawaja1, date2, time2, 0, 0, 0, 0);
+        CricketMatch match2 = new CricketMatch(asad1, khawaja1, date2, time2, 0, 0, 0, 0,"true2");
 
         cricketMatches.add(match1);
         cricketMatches.add(match2);
