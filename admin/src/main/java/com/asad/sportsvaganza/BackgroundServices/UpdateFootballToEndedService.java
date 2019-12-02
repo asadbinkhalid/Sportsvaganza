@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.asad.businesslogic.FootballMatch;
+import com.asad.businesslogic.Main;
 import com.asad.businesslogic.Match;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,11 +40,12 @@ public class UpdateFootballToEndedService extends IntentService {
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                //footballMatches.clear();
+                Main.getInstance().getFootballMatchesList().clear();
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
 
                     final String key = postSnapshot.getKey();
                     reff.child(key).addValueEventListener(new ValueEventListener() {
+
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -52,6 +54,7 @@ public class UpdateFootballToEndedService extends IntentService {
                             if (f.getMatchID().equals(tempFootballMatch.getMatchID())) {
                                 reff.child(key).child("state").setValue(Match.ENDED);
                             }
+                            Main.getInstance().getFootballMatchesList().add(f);
 
                         }
 
