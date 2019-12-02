@@ -40,7 +40,7 @@ public class UpdateFootballToEndedService extends IntentService {
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                Main.getInstance().getFootballMatchesList().clear();
+               // Main.getInstance().getFootballMatchesList().clear();
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
 
                     final String key = postSnapshot.getKey();
@@ -54,7 +54,7 @@ public class UpdateFootballToEndedService extends IntentService {
                             if (f.getMatchID().equals(tempFootballMatch.getMatchID())) {
                                 reff.child(key).child("state").setValue(Match.ENDED);
                             }
-                            Main.getInstance().getFootballMatchesList().add(f);
+                        //    Main.getInstance().getFootballMatchesList().add(f);
 
                         }
 

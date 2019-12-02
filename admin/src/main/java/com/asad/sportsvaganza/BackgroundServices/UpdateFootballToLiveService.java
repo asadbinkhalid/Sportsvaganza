@@ -46,7 +46,7 @@ public class UpdateFootballToLiveService extends IntentService {
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                Main.getInstance().getFootballMatchesList().clear();
+                //Main.getInstance().getFootballMatchesList().clear();
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
                     final String key=postSnapshot.getKey();
                     reff.child(key).addValueEventListener(new ValueEventListener() {
@@ -57,7 +57,7 @@ public class UpdateFootballToLiveService extends IntentService {
                             {
                                 reff.child(key).child("state").setValue(Match.LIVE);
                             }
-                            Main.getInstance().getFootballMatchesList().add(f);
+                  //          Main.getInstance().getFootballMatchesList().add(f);
                         }
 
                         @Override
