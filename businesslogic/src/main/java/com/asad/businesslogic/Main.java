@@ -227,6 +227,7 @@ public class Main {
 
                             if (f.getMatchID().equals(tempCricketMatch.getMatchID())) {
                                 reff.child(key).child("state").setValue(Match.ENDED);
+
                             }
 
                         }
