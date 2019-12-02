@@ -103,34 +103,18 @@ public class Activity3_football_main extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Logged Out!", Toast.LENGTH_LONG).show();
             //Globals.isLogin = false;
             finish();
-
-
             startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }
 
-
-
-
     public void refreshActivity(){
-//        Intent refresh = new Intent(this, Activity3_football_main.class);
-//        startActivity(refresh);
-//        this.finish();
 
         finish();
         overridePendingTransition(0, 0);
         startActivity(getIntent());
         overridePendingTransition(0, 0);
     }
-
-//    public void startMatchVIAService(FootballMatch obj){
-//        Intent intent = new Intent(this, UpdateFootballToLiveService.class);
-////                Intent intent = new Intent(context.getApplicationContext(), UpdateFootballToLiveService.class);
-//        intent.putExtra("footballMatch", obj);
-//
-//        startService(intent);
-//    }
 
     public void updateFootballMatchVIAService(FootballMatch obj){
         Intent intent = new Intent(this, UpdateFootballMatchService.class);

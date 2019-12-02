@@ -10,7 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.asad.businesslogic.CricketMatch;
 import com.asad.businesslogic.Globals;
+import com.asad.sportsvaganza.BackgroundServices.UpdateCricketMatchService;
 import com.asad.sportsvaganza.Fragments.CricketFixturesFragment;
 import com.asad.sportsvaganza.Fragments.CricketLiveFragment;
 
@@ -85,24 +87,6 @@ public class Activity3_cricket_main extends AppCompatActivity {
     }
 
     @Override
-    protected void onRestart() {
-        super.onRestart();
-//        if(!Globals.isLogin){
-//            this.onDestroy();
-//            Log.d("asad", "screen not openned because user is logged out");
-//        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-//        if(!Globals.isLogin){
-//            this.onDestroy();
-//            Log.d("asad", "screen not openned because user is logged out");
-//        }
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
@@ -124,20 +108,22 @@ public class Activity3_cricket_main extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Logged Out!", Toast.LENGTH_LONG).show();
             finish();
 
-
             startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }
 
     public void refreshActivity(){
-//        Intent refresh = new Intent(this, Activity3_football_main.class);
-//        startActivity(refresh);
-//        this.finish();
-
         finish();
         overridePendingTransition(0, 0);
         startActivity(getIntent());
         overridePendingTransition(0, 0);
+    }
+
+    public void updateCricketMatchVIAService(CricketMatch obj){
+        Intent intent = new Intent(this, UpdateCricketMatchService.class);
+        intent.putExtra("cricketMatch", obj);
+
+        startService(intent);
     }
 }

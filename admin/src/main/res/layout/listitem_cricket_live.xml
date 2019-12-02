@@ -36,9 +36,10 @@
         android:text="@string/g1"
         app:layout_constraintBottom_toBottomOf="@+id/textView_slash"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toEndOf="@+id/textView_slash"
-        app:layout_constraintTop_toTopOf="@+id/textView_slash" />
+        app:layout_constraintTop_toTopOf="@+id/textView_slash"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textView_slash"
@@ -48,20 +49,33 @@
         android:text="@string/slash"
         app:layout_constraintBottom_toBottomOf="@+id/textView_runs"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.18"
         app:layout_constraintStart_toEndOf="@+id/textView_runs"
         app:layout_constraintTop_toTopOf="@+id/textView_runs"
         app:layout_constraintVertical_bias="0.0" />
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <EditText
         android:id="@+id/textView_runs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/runs"
+        android:layout_width="41dp"
+        android:layout_height="26dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView_battingTeam"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView_battingTeam"
         app:layout_constraintTop_toTopOf="@+id/textView_battingTeam" />
+
+<!--    <androidx.appcompat.widget.AppCompatTextView-->
+<!--        android:id="@+id/textView_runs"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/runs"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/textView_battingTeam"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textView_battingTeam"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/textView_battingTeam" />-->
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textView_targetScore"
@@ -97,7 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.08" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textView_battingTeam"
@@ -109,7 +123,7 @@
         app:layout_constraintEnd_toStartOf="@+id/textView_live"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView_live"
-        app:layout_constraintVertical_bias="00.06" />
+        app:layout_constraintVertical_bias="0.04" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textView_fieldingTeam"
@@ -121,13 +135,13 @@
         app:layout_constraintEnd_toEndOf="@+id/textView_battingTeam"
         app:layout_constraintStart_toStartOf="@+id/textView_battingTeam"
         app:layout_constraintTop_toBottomOf="@+id/textView_battingTeam"
-        app:layout_constraintVertical_bias="0.22" />
+        app:layout_constraintVertical_bias="0.37" />
 
     <View
         android:id="@+id/view123"
         android:layout_width="280dp"
         android:layout_height="0.5dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="30dp"
         android:background="@color/cricket_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -150,6 +164,70 @@
         app:layout_constraintStart_toEndOf="@+id/textView_live"
         app:layout_constraintTop_toTopOf="@+id/textView_targetScore"
         tools:text="@string/end_match" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/round_button_start_cricket"
+        android:text="@string/plus"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_overs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView_overs"
+        app:layout_constraintTop_toTopOf="@+id/textView_overs" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/round_button_start_cricket"
+        android:text="@string/plus"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/textView_runs"
+        app:layout_constraintEnd_toEndOf="@+id/textView_runs"
+        app:layout_constraintStart_toStartOf="@+id/textView_runs"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="@drawable/round_button_start_cricket"
+        android:text="@string/plus"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/button9"
+        app:layout_constraintEnd_toEndOf="@+id/textView_wickets"
+        app:layout_constraintStart_toStartOf="@+id/textView_wickets"
+        app:layout_constraintTop_toTopOf="@+id/button9"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="@drawable/round_button_start_football"
+        android:text="@string/minus"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/textView_runs"
+        app:layout_constraintStart_toStartOf="@+id/textView_runs"
+        app:layout_constraintTop_toBottomOf="@+id/textView_runs" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="@drawable/round_button_start_football"
+        android:text="@string/minus"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/button11"
+        app:layout_constraintEnd_toEndOf="@+id/textView_wickets"
+        app:layout_constraintStart_toStartOf="@+id/textView_wickets"
+        app:layout_constraintTop_toTopOf="@+id/button11" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

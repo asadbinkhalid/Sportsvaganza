@@ -11,17 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.businesslogic.CricketMatch;
-import com.asad.businesslogic.FootballMatch;
-import com.asad.businesslogic.Globals;
-import com.asad.businesslogic.Main;
 import com.asad.businesslogic.Match;
+import com.asad.sportsvaganza.Activities.Activity3_cricket_main;
 import com.asad.sportsvaganza.R;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -54,12 +46,16 @@ public class CricketFixturesAdapter extends RecyclerView.Adapter<CricketFixtures
         holder.startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cricketFixturesModelList.get(position).setState(Match.LIVE);
 
-                    cricketFixturesModelList.get(position).setState(Match.LIVE);
-                    Main.getInstance().updateCricketToLive(cricketFixturesModelList.get(position));
-                    Main.getInstance().initiateCricketMatches();
-                    notifyItemChanged(position);
-                    Globals.refresh = true;
+                ((Activity3_cricket_main) context).updateCricketMatchVIAService(cricketFixturesModelList.get(position));
+
+                ((Activity3_cricket_main) context).refreshActivity();
+                //Main.getInstance().initiateFootballMatches();
+//                    Main.getInstance().updateCricketToLive(cricketFixturesModelList.get(position));
+//                    Main.getInstance().initiateCricketMatches();
+//                    notifyItemChanged(position);
+//                    Globals.refresh = true;
             }
 
         });

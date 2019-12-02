@@ -14,6 +14,7 @@ import com.asad.businesslogic.FootballMatch;
 import com.asad.businesslogic.Main;
 import com.asad.businesslogic.Globals;
 import com.asad.businesslogic.Match;
+import com.asad.sportsvaganza.Activities.Activity3_cricket_main;
 import com.asad.sportsvaganza.Activities.Activity3_football_main;
 import com.asad.sportsvaganza.R;
 
@@ -50,8 +51,8 @@ public class FootballFixturesAdapter extends RecyclerView.Adapter<FootballFixtur
                 footballFixturesModelList.get(position).setState(Match.LIVE);
 
                 ((Activity3_football_main) context).updateFootballMatchVIAService(footballFixturesModelList.get(position));
-                Main.getInstance().initiateFootballMatches();
-
+                //Main.getInstance().initiateFootballMatches();
+                ((Activity3_football_main) context).refreshActivity();
                 //notifyItemChanged(position);
                 Globals.refresh = true;
             }

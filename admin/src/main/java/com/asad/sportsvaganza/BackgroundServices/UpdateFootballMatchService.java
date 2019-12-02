@@ -18,7 +18,7 @@ public class UpdateFootballMatchService extends IntentService {
 
 
     public UpdateFootballMatchService() {
-        super("end-match-service");
+        super("football update service");
     }
 
     @Override
@@ -32,7 +32,7 @@ public class UpdateFootballMatchService extends IntentService {
         updateFootballMatch( (FootballMatch) intent.getSerializableExtra("footballMatch"));
     }
 
-    public void updateFootballMatch(final FootballMatch tempFootballMatch) {
+    private void updateFootballMatch(final FootballMatch tempFootballMatch) {
         final DatabaseReference reff;
         reff = FirebaseDatabase.getInstance().getReference("FootballMatch");
         reff.addValueEventListener(new ValueEventListener() {
@@ -43,7 +43,6 @@ public class UpdateFootballMatchService extends IntentService {
 
                     final String key = postSnapshot.getKey();
                     reff.child(key).addValueEventListener(new ValueEventListener() {
-
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
