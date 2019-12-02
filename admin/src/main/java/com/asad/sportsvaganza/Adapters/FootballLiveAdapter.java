@@ -50,14 +50,17 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
             public void onClick(View v) {
                 footballLiveModelList.get(position).setState(Match.ENDED);
                 //Main.getInstance().updateFootballToEnded  (footballLiveModelList.get(position));
+                if (footballLiveModelList.get(position).getTeam1Score() < footballLiveModelList.get(position).getTeam2Score())
+                {
+                    String temp = footballLiveModelList.get(position).getTeam1().getName() ;
+                    footballLiveModelList.get(position).getTeam1().setName(footballLiveModelList.get(position).getTeam2().getName());
+                    footballLiveModelList.get(position).getTeam2().setName(temp);
+
+                }
                 Main.getInstance().initiateFootballMatches();
 
                 ((Activity3_football_main) context).endMatchVIAService(footballLiveModelList.get(position));
 
-
-
-                notifyItemChanged(position);
-                Globals.refresh = true;
             }
         });
     }
