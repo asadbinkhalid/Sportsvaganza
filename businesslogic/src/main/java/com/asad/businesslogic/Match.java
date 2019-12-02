@@ -14,15 +14,26 @@ public class Match {
     private String date;
     private String time;
     private int winnerID;
+    private String matchID;
 
-    public Match(Team team1, Team team2, String date, String time) {
+    public Match(Team team1, Team team2, String date, String time,String ID) {
         state = SCHEDULED;
         this.team1 = team1;
         this.team2 = team2;
         this.date = date;
         this.time = time;
         winnerID = 0;
+        matchID = ID;
     }
+
+    public String getMatchID() {
+        return matchID;
+    }
+
+    public void setMatchID(String matchID) {
+        this.matchID = matchID;
+    }
+
     public Match()
     {
 

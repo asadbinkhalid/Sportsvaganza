@@ -35,9 +35,11 @@ public class  Activity4_football_addMatch extends AppCompatActivity {
                 EditText etTime = (EditText) findViewById(R.id.TI_time);
                 String strTime = etTime.getText().toString();
 
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myReff = FirebaseDatabase.getInstance().getReference().child("FootballMatch");
+                String key = database.getReference("FootballMatch").push().getKey();
 
-                FootballMatch myTemp = new FootballMatch(new Team(strTeam1),new Team(strTeam2),strDate,strTime,0,0);
+                FootballMatch myTemp = new FootballMatch(new Team(strTeam1),new Team(strTeam2),strDate,strTime,0,0,key);
 
                 myReff.push().setValue(myTemp);
 

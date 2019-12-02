@@ -6,8 +6,8 @@ public class CricketMatch extends Match {
     private int wickets;
     private int overs;
 
-    public CricketMatch(Team team1, Team team2, String date, String time, int team1Runs, int team2Runs, int wickets, int overs) {
-        super(team1, team2, date, time);
+    public CricketMatch(Team team1, Team team2, String date, String time, int team1Runs, int team2Runs, int wickets, int overs,String ID) {
+        super(team1, team2, date, time,ID);
         this.team1Runs = team1Runs;
         this.team2Runs = team2Runs;
         this.wickets = wickets;
