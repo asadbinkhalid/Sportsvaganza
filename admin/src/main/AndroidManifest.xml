@@ -24,8 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".BackgroundServices.UpdateFootballToLiveService" />
-        <service android:name=".BackgroundServices.UpdateFootballToEndedService" />
+
+        <service android:name=".BackgroundServices.UpdateFootballMatchService" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

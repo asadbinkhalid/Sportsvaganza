@@ -8,18 +8,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.asad.businesslogic.FootballMatch;
-import com.asad.businesslogic.Main;
-import com.asad.businesslogic.Match;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class UpdateFootballToEndedService extends IntentService {
+public class UpdateFootballMatchService extends IntentService {
 
 
-    public UpdateFootballToEndedService() {
+    public UpdateFootballMatchService() {
         super("end-match-service");
     }
 
@@ -31,10 +29,10 @@ public class UpdateFootballToEndedService extends IntentService {
 
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
-        updateFootballToEnded( (FootballMatch) intent.getSerializableExtra("footballMatch"));
+        updateFootballMatch( (FootballMatch) intent.getSerializableExtra("footballMatch"));
     }
 
-    public void updateFootballToEnded(final FootballMatch tempFootballMatch) {
+    public void updateFootballMatch(final FootballMatch tempFootballMatch) {
         final DatabaseReference reff;
         reff = FirebaseDatabase.getInstance().getReference("FootballMatch");
         reff.addValueEventListener(new ValueEventListener() {
@@ -52,7 +50,9 @@ public class UpdateFootballToEndedService extends IntentService {
                             FootballMatch f = dataSnapshot.getValue(FootballMatch.class);
 
                             if (f.getMatchID().equals(tempFootballMatch.getMatchID())) {
-                                reff.child(key).child("state").setValue(Match.ENDED);
+                                reff.child(key).child("state").setValue(tempFootballMatch.getState());
+                                reff.child(key).child("team1Score").setValue(tempFootballMatch.getTeam1Score());
+                                reff.child(key).child("team2Score").setValue(tempFootballMatch.getTeam2Score());
                             }
                         //    Main.getInstance().getFootballMatchesList().add(f);
 

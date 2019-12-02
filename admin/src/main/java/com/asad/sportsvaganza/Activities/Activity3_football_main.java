@@ -1,19 +1,15 @@
 package com.asad.sportsvaganza.Activities;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.asad.businesslogic.FootballMatch;
-import com.asad.businesslogic.Globals;
-import com.asad.sportsvaganza.BackgroundServices.UpdateFootballToEndedService;
-import com.asad.sportsvaganza.BackgroundServices.UpdateFootballToLiveService;
+import com.asad.sportsvaganza.BackgroundServices.UpdateFootballMatchService;
 import com.asad.sportsvaganza.Fragments.FootballLiveFragment;
 import com.asad.sportsvaganza.Fragments.FootballResultsFragment;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -28,8 +24,6 @@ import com.asad.sportsvaganza.Fragments.FootballFixturesFragment;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.OnLifecycleEvent;
 import androidx.viewpager.widget.ViewPager;
 
 import java.util.Objects;
@@ -130,16 +124,16 @@ public class Activity3_football_main extends AppCompatActivity {
         overridePendingTransition(0, 0);
     }
 
-    public void startMatchVIAService(FootballMatch obj){
-        Intent intent = new Intent(this, UpdateFootballToLiveService.class);
-//                Intent intent = new Intent(context.getApplicationContext(), UpdateFootballToLiveService.class);
-        intent.putExtra("footballMatch", obj);
+//    public void startMatchVIAService(FootballMatch obj){
+//        Intent intent = new Intent(this, UpdateFootballToLiveService.class);
+////                Intent intent = new Intent(context.getApplicationContext(), UpdateFootballToLiveService.class);
+//        intent.putExtra("footballMatch", obj);
+//
+//        startService(intent);
+//    }
 
-        startService(intent);
-    }
-
-    public void endMatchVIAService(FootballMatch obj){
-        Intent intent = new Intent(this, UpdateFootballToEndedService.class);
+    public void updateFootballMatchVIAService(FootballMatch obj){
+        Intent intent = new Intent(this, UpdateFootballMatchService.class);
         intent.putExtra("footballMatch", obj);
 
         startService(intent);

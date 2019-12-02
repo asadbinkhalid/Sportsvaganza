@@ -14,13 +14,12 @@ public class FootballMatch extends Match implements Serializable {
     public FootballMatch()
     {
         super();
-
     }
 
     public FootballMatch(FootballMatch value) {
-        super(value.getTeam1(),value.getTeam2(),value.getDate(),value.getTime(),value.getMatchID(),value.getState());
+        super(value.getTeam1(), value.getTeam2(), value.getDate(), value.getTime(), value.getMatchID());
         team1Score = value.team1Score;
-        team1Score = value.team1Score;
+        team2Score = value.team2Score;
     }
 
     public int getTeam1Score() {

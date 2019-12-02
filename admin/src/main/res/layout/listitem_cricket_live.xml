@@ -136,8 +136,8 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="115dp"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
         android:background="@drawable/round_button_start_cricket"
         android:fontFamily="sans-serif-medium"
         android:text="@string/end_match"
@@ -146,8 +146,8 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/textView_targetScore"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.563"
-        app:layout_constraintStart_toEndOf="@+id/textView_targetScore"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toEndOf="@+id/textView_live"
         app:layout_constraintTop_toTopOf="@+id/textView_targetScore"
         tools:text="@string/end_match" />
 

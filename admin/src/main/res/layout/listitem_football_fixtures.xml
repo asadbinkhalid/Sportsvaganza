@@ -24,7 +24,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <androidx.appcompat.widget.AppCompatTextView android:id="@+id/textView_teamBName"
         android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
         app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_VS"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.65" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/match_date"
@@ -63,8 +63,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="115dp"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
         android:background="@drawable/round_button_start_football"
         android:fontFamily="sans-serif-medium"
         android:text="@string/start_match"
@@ -73,11 +73,11 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/text_matchTime"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.646"
-        app:layout_constraintStart_toEndOf="@+id/match_date"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toEndOf="@+id/textView_VS"
         app:layout_constraintTop_toTopOf="@+id/text_matchTime"
         app:layout_constraintVertical_bias="0.5"
-        tools:text="@string/start_match"/>
+        tools:text="@string/start_match" />
 
     <View
         android:id="@+id/view123"
