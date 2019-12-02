@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.businesslogic.CricketMatch;
 import com.asad.businesslogic.FootballMatch;
+import com.asad.businesslogic.Globals;
+import com.asad.businesslogic.Main;
 import com.asad.businesslogic.Match;
 import com.asad.sportsvaganza.R;
 import com.google.android.gms.tasks.Task;
@@ -52,8 +54,14 @@ public class CricketFixturesAdapter extends RecyclerView.Adapter<CricketFixtures
         holder.startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cricketFixturesModelList.get(position).setState(Match.LIVE);
+
+                    cricketFixturesModelList.get(position).setState(Match.LIVE);
+                    Main.getInstance().updateCricketToLive(cricketFixturesModelList.get(position));
+                    Main.getInstance().initiateCricketMatches();
+                    notifyItemChanged(position);
+                    Globals.refresh = true;
             }
+
         });
     }
 

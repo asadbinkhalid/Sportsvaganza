@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.businesslogic.CricketMatch;
+import com.asad.businesslogic.Globals;
+import com.asad.businesslogic.Main;
 import com.asad.businesslogic.Match;
 import com.asad.sportsvaganza.R;
 
@@ -46,6 +48,10 @@ public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.
         public void onClick(View v) {
             cricketLiveModelList.get(position).setState(Match.ENDED);
             //refreshActivity();
+            Main.getInstance().updateCricketToEnded(cricketLiveModelList.get(position));
+            Main.getInstance().initiateCricketMatches();
+            notifyItemChanged(position);
+            Globals.refresh = true;
         }
     });
     }
@@ -73,6 +79,8 @@ public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.
             movers = itemView.findViewById(R.id.textView_over);
             mwickets = itemView.findViewById(R.id.textView_wickets);
             endButton = itemView.findViewById(R.id.button2);
+
+
         }
     }
 
