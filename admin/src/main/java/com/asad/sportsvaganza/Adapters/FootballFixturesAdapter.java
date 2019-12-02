@@ -46,10 +46,10 @@ public class FootballFixturesAdapter extends RecyclerView.Adapter<FootballFixtur
             @Override
             public void onClick(View v) {
                 footballFixturesModelList.get(position).setState(Match.LIVE);
+                notifyItemChanged(position);
                 Globals.refresh = true;
             }
         });
-
     }
 
     @Override

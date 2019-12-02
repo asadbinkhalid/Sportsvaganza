@@ -102,7 +102,7 @@ public class Activity3_football_main extends AppCompatActivity {
 
             Intent i = new Intent(this, Activity_Login_Main.class);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            Toast.makeText(getApplicationContext(), "Logging Out!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Logged Out!", Toast.LENGTH_LONG).show();
             //Globals.isLogin = false;
             finish();
 

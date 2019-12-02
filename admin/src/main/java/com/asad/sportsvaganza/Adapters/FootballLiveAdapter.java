@@ -48,6 +48,7 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
             @Override
             public void onClick(View v) {
                 footballLiveModelList.get(position).setState(Match.ENDED);
+                notifyItemChanged(position);
                 Globals.refresh = true;
             }
         });

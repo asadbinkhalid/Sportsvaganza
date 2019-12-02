@@ -39,7 +39,7 @@ public class Activity_Login_Main extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Boolean check = true;
+                boolean check = true;
                 EditText etUserName = (EditText) findViewById(R.id.username);
                 String strUserName = etUserName.getText().toString();
                 EditText etPass = (EditText) findViewById(R.id.password);
