@@ -10,7 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.asad.businesslogic.FootballMatch;
 import com.asad.businesslogic.Globals;
+import com.asad.sportsvaganza.BackgroundServices.UpdateFootballToEndedService;
+import com.asad.sportsvaganza.BackgroundServices.UpdateFootballToLiveService;
 import com.asad.sportsvaganza.Fragments.FootballLiveFragment;
 import com.asad.sportsvaganza.Fragments.FootballResultsFragment;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -80,6 +83,7 @@ public class Activity3_football_main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
 
@@ -124,6 +128,21 @@ public class Activity3_football_main extends AppCompatActivity {
         overridePendingTransition(0, 0);
         startActivity(getIntent());
         overridePendingTransition(0, 0);
+    }
+
+    public void startMatchVIAService(FootballMatch obj){
+        Intent intent = new Intent(this, UpdateFootballToLiveService.class);
+//                Intent intent = new Intent(context.getApplicationContext(), UpdateFootballToLiveService.class);
+        intent.putExtra("footballMatch", obj);
+
+        startService(intent);
+    }
+
+    public void endMatchVIAService(FootballMatch obj){
+        Intent intent = new Intent(this, UpdateFootballToEndedService.class);
+        intent.putExtra("footballMatch", obj);
+
+        startService(intent);
     }
 
 }

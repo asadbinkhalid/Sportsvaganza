@@ -49,8 +49,13 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
             @Override
             public void onClick(View v) {
                 footballLiveModelList.get(position).setState(Match.ENDED);
-                Main.getInstance().updateFootballToEnded  (footballLiveModelList.get(position));
+                //Main.getInstance().updateFootballToEnded  (footballLiveModelList.get(position));
                 Main.getInstance().initiateFootballMatches();
+
+                ((Activity3_football_main) context).endMatchVIAService(footballLiveModelList.get(position));
+
+
+
                 notifyItemChanged(position);
                 Globals.refresh = true;
             }

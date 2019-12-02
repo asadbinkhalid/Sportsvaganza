@@ -1,5 +1,6 @@
 package com.asad.sportsvaganza.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.asad.businesslogic.FootballMatch;
 import com.asad.businesslogic.Main;
 import com.asad.businesslogic.Match;
+import com.asad.sportsvaganza.Activities.Activity3_football_main;
 import com.asad.sportsvaganza.Adapters.FootballFixturesAdapter;
+import com.asad.sportsvaganza.BackgroundServices.UpdateFootballToLiveService;
 import com.asad.sportsvaganza.R;
 
 import java.util.ArrayList;
@@ -59,4 +62,5 @@ public class FootballFixturesFragment extends Fragment {
 
         return scheduledMatches;
     }
+
 }

@@ -1,8 +1,9 @@
 package com.asad.businesslogic;
 
 
+import java.io.Serializable;
 
-public class Match {
+public class Match implements Serializable {
     public static final String SCHEDULED = "scheduled";
     public static final String LIVE = "live";
     public static final String ENDED = "ended";

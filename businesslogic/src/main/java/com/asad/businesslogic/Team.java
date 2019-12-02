@@ -1,6 +1,8 @@
 package com.asad.businesslogic;
 
-public class Team extends User {
+import java.io.Serializable;
+
+public class Team extends User implements Serializable {
     private String name;
 
     public Team(String name) {
