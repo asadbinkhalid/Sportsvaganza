@@ -184,7 +184,7 @@ public class Main {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                            FootballMatch f=dataSnapshot.getValue(FootballMatch.class);
+                            CricketMatch f=dataSnapshot.getValue(CricketMatch.class);
 
                             if(f.getMatchID().equals(tempCricketMatch.getMatchID()))
                             {

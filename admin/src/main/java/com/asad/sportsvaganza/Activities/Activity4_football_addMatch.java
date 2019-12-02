@@ -61,19 +61,19 @@ public class  Activity4_football_addMatch extends AppCompatActivity {
 
                 if (check) {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myReff = FirebaseDatabase.getInstance().getReference().child("FootballMatch");
-                    String key = database.getReference("FootballMatch").push().getKey();
+        DatabaseReference myReff = FirebaseDatabase.getInstance().getReference().child("FootballMatch");
+        String key = database.getReference("FootballMatch").push().getKey();
 
-                    FootballMatch myTemp = new FootballMatch(new Team(strTeam1), new Team(strTeam2), strDate, strTime, 0, 0, key);
+        FootballMatch myTemp = new FootballMatch(new Team(strTeam1), new Team(strTeam2), strDate, strTime, 0, 0, key);
 
-                    myReff.push().setValue(myTemp);
+        myReff.push().setValue(myTemp);
 
-                    Intent intent = new Intent(Activity4_football_addMatch.this, Activity3_football_main.class);
-                    startActivity(intent);
+        Intent intent = new Intent(Activity4_football_addMatch.this, Activity3_football_main.class);
+        startActivity(intent);
 
-                    Toast.makeText(getApplicationContext(), "Match Added in Fixtures", Toast.LENGTH_LONG).show();
-                }
-            }
+        Toast.makeText(getApplicationContext(), "Match Added in Fixtures", Toast.LENGTH_LONG).show();
+    }
+}
 
 
         });
