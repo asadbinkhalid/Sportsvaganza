@@ -2,25 +2,25 @@ package com.asad.sportsvaganza.BackgroundServices;
 
 import android.app.IntentService;
 import android.content.Intent;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.asad.businesslogic.FootballMatch;
-import com.asad.businesslogic.Main;
-import com.asad.businesslogic.Match;
+import com.asad.businesslogic.CricketMatch;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class UpdateFootballToEndedService extends IntentService {
-
-
-    public UpdateFootballToEndedService() {
-        super("end-match-service");
+public class UpdateCricketMatchService extends IntentService {
+    /**
+     * Creates an IntentService.  Invoked by your subclass's constructor.
+     *
+     * @param name Used to name the worker thread, important only for debugging.
+     */
+    public UpdateCricketMatchService() {
+        super("cricket update service");
     }
 
     @Override
@@ -31,31 +31,32 @@ public class UpdateFootballToEndedService extends IntentService {
 
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
-        updateFootballToEnded( (FootballMatch) intent.getSerializableExtra("footballMatch"));
+        updateCricketMatch( (CricketMatch) intent.getSerializableExtra("cricketMatch"));
     }
 
-    public void updateFootballToEnded(final FootballMatch tempFootballMatch) {
+    private void updateCricketMatch(final CricketMatch tempCricketMatch) {
         final DatabaseReference reff;
-        reff = FirebaseDatabase.getInstance().getReference("FootballMatch");
+        reff = FirebaseDatabase.getInstance().getReference("CricketMatch");
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-               // Main.getInstance().getFootballMatchesList().clear();
-                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                //footballMatches.clear();
+                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
 
-                    final String key = postSnapshot.getKey();
+                    final String key=postSnapshot.getKey();
                     reff.child(key).addValueEventListener(new ValueEventListener() {
-
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                            FootballMatch f = dataSnapshot.getValue(FootballMatch.class);
+                            CricketMatch f=dataSnapshot.getValue(CricketMatch.class);
 
-                            if (f.getMatchID().equals(tempFootballMatch.getMatchID())) {
-                                reff.child(key).child("state").setValue(Match.ENDED);
+                            if(f.getMatchID().equals(tempCricketMatch.getMatchID())) {
+                                reff.child(key).child("state").setValue(tempCricketMatch.getState());
+                                reff.child(key).child("team1Runs").setValue(tempCricketMatch.getTeam1Runs());
+                                reff.child(key).child("team2Runs").setValue(tempCricketMatch.getTeam2Runs());
+                                reff.child(key).child("overs").setValue(tempCricketMatch.getOvers());
+                                reff.child(key).child("wickets").setValue(tempCricketMatch.getWickets());
                             }
-                        //    Main.getInstance().getFootballMatchesList().add(f);
-
                         }
 
                         @Override
@@ -70,10 +71,6 @@ public class UpdateFootballToEndedService extends IntentService {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-
-
         });
-        Log.d("asad", "End match service me firebase call ho raha haiiiiii");
     }
-
 }

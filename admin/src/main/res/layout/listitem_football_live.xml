@@ -23,14 +23,14 @@
         android:id="@+id/button7"
         android:layout_width="30dp"
         android:layout_height="20dp"
-        android:layout_marginStart="6dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/round_button_start_cricket"
         android:text="@string/plus"
         android:textAlignment="gravity"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_scoreA3"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_scoreB3"
         app:layout_constraintStart_toEndOf="@+id/textView_scoreB3"
         app:layout_constraintTop_toTopOf="@+id/textView_live"
         app:layout_constraintVertical_bias="0.0" />
@@ -54,7 +54,7 @@
         android:layout_width="30dp"
         android:layout_height="20dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="6dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/round_button_start_cricket"
         android:text="@string/plus"
         android:textAlignment="gravity"
@@ -130,8 +130,8 @@
         android:text="@string/teamA"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@id/textView_hyphen3"
-        app:layout_constraintEnd_toStartOf="@id/textView_scoreA3"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/textView_hyphen3" />
 
@@ -156,8 +156,8 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@id/textView_hyphen3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toEndOf="@id/textView_scoreB3"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toEndOf="@+id/button7"
         app:layout_constraintTop_toTopOf="@id/textView_hyphen3" />
 
     <View

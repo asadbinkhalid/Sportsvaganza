@@ -1,6 +1,8 @@
 package com.asad.businesslogic;
 
-public class CricketMatch extends Match {
+import java.io.Serializable;
+
+public class CricketMatch extends Match implements Serializable {
     private int team1Runs;
     private int team2Runs;
     private int wickets;

@@ -5,21 +5,20 @@ import android.content.Intent;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.asad.businesslogic.FootballMatch;
-import com.asad.businesslogic.Main;
-import com.asad.businesslogic.Match;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class UpdateFootballToLiveService extends IntentService {
-    // Must create a default constructor
-    public UpdateFootballToLiveService() {
-        // Used to name the worker thread, important only for debugging.
-        super("start-match-service");
+public class UpdateFootballMatchService extends IntentService {
+
+
+    public UpdateFootballMatchService() {
+        super("football update service");
     }
 
     @Override
@@ -29,35 +28,33 @@ public class UpdateFootballToLiveService extends IntentService {
     }
 
     @Override
-    protected void onHandleIntent(Intent intent) {
-        // This describes what will happen when service is triggered
-
-        //Main.getInstance().updateFootballToLive();
-        updateFootballToLive( (FootballMatch) intent.getSerializableExtra("footballMatch"));
-
+    protected void onHandleIntent(@Nullable Intent intent) {
+        updateFootballMatch( (FootballMatch) intent.getSerializableExtra("footballMatch"));
     }
 
-
-    public void updateFootballToLive(final FootballMatch tempFootballMatch)
-    {
-
+    private void updateFootballMatch(final FootballMatch tempFootballMatch) {
         final DatabaseReference reff;
         reff = FirebaseDatabase.getInstance().getReference("FootballMatch");
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                //Main.getInstance().getFootballMatchesList().clear();
-                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
-                    final String key=postSnapshot.getKey();
+               // Main.getInstance().getFootballMatchesList().clear();
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+
+                    final String key = postSnapshot.getKey();
                     reff.child(key).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            FootballMatch f=dataSnapshot.getValue(FootballMatch.class);
-                            if(f.getMatchID().equals(tempFootballMatch.getMatchID()))
-                            {
-                                reff.child(key).child("state").setValue(Match.LIVE);
+
+                            FootballMatch f = dataSnapshot.getValue(FootballMatch.class);
+
+                            if (f.getMatchID().equals(tempFootballMatch.getMatchID())) {
+                                reff.child(key).child("state").setValue(tempFootballMatch.getState());
+                                reff.child(key).child("team1Score").setValue(tempFootballMatch.getTeam1Score());
+                                reff.child(key).child("team2Score").setValue(tempFootballMatch.getTeam2Score());
                             }
-                  //          Main.getInstance().getFootballMatchesList().add(f);
+                        //    Main.getInstance().getFootballMatchesList().add(f);
+
                         }
 
                         @Override
@@ -72,8 +69,10 @@ public class UpdateFootballToLiveService extends IntentService {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
 
-        Log.d("asad", "Start match service me firebase call ho raha haiiiiii");
+
+        });
+        Log.d("asad", "End match service me firebase call ho raha haiiiiii");
     }
+
 }

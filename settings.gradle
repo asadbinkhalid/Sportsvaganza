@@ -1,2 +1,2 @@
-include ':participant', ':admin', ':businesslogic'
+include ':participant', ':admin', ':businesslogic', ':roomdatabase'
 rootProject.name='Sportsvaganza'

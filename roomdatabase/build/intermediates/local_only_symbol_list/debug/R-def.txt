@@ -1,0 +1,12 @@
+R_DEF: Internal format may change without notice
+local
+id date
+id datee
+id event
+id location_tracking_recyclerview
+id time
+layout activity_main
+layout places_visit
+layout recyclerview
+layout recyclerview_item
+layout screen_time
