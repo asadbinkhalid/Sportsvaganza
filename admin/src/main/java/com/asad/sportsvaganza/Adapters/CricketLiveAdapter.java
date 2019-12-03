@@ -120,6 +120,28 @@ public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.
                 ((Activity3_cricket_main) context).refreshActivity();
             }
         });
+        holder.changeInningsButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if(cricketLiveModelList.get(position).getTeam2Runs() == 0){
+                    String temp = cricketLiveModelList.get(position).getTeam1().getName();
+                    cricketLiveModelList.get(position).getTeam1().setName(cricketLiveModelList.get(position).getTeam2().getName());
+                    cricketLiveModelList.get(position).getTeam2().setName(temp);
+
+                    int tempInt = cricketLiveModelList.get(position).getTeam1Runs();
+                    cricketLiveModelList.get(position).setTeam1Runs(cricketLiveModelList.get(position).getTeam2Runs());
+                    cricketLiveModelList.get(position).setTeam2Runs(tempInt);
+
+                    cricketLiveModelList.get(position).setOvers(0);
+                    cricketLiveModelList.get(position).setWickets(0);
+
+                    //holder.mtarget.setText(String.valueOf(cricketLiveModelList.get(position).getTeam1Runs()));
+
+                    ((Activity3_cricket_main) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
+                    ((Activity3_cricket_main) context).refreshActivity();
+                }
+            }
+        });
 
     }
 
@@ -141,9 +163,11 @@ public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.
         Button addWicketsButton;
         Button subWicketsButton;
         Button addOversButton;
+        Button changeInningsButton;
 
         public CricketLiveViewHolder(@NonNull View itemView) {
             super(itemView);
+
             mteamA = itemView.findViewById(R.id.textView_battingTeam);
             mteamB = itemView.findViewById(R.id.textView_fieldingTeam);
             mruns = itemView.findViewById(R.id.textView_runs);
@@ -156,6 +180,7 @@ public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.
             addWicketsButton = itemView.findViewById(R.id.button10);
             subWicketsButton = itemView.findViewById(R.id.button12);
             addOversButton = itemView.findViewById(R.id.button8);
+            changeInningsButton = itemView.findViewById(R.id.button13);
 
         }
     }

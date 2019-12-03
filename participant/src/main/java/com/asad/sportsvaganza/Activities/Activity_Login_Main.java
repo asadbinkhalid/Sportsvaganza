@@ -98,7 +98,7 @@ public class Activity_Login_Main extends AppCompatActivity {
                                             }
                                         });
                                         Main.getInstance();
-                                        Globals.isLogin = true;
+
                                         Intent intent = new Intent(Activity_Login_Main.this, Activity2_gamesList.class);
                                         startActivity(intent);
                                     }
