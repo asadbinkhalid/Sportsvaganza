@@ -96,23 +96,23 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\gn
 		ADDED from F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:11:9-65
-activity#com.asad.sportsvaganza.Activities.Activity_Login_Main
+activity#com.asad.sportsvaganza.Activities.LoginActivity
 ADDED from F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:12:9-68
 	android:name
 		ADDED from F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:12:19-65
-activity#com.asad.sportsvaganza.Activities.Activity3_football_main
+activity#com.asad.sportsvaganza.Activities.FootballMainActivity
 ADDED from F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:14:9-72
 	android:name
 		ADDED from F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:14:19-69
-activity#com.asad.sportsvaganza.Activities.Activity3_cricket_main
+activity#com.asad.sportsvaganza.Activities.CricketMainActivity
 ADDED from F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:15:9-71
 	android:name
 		ADDED from F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:15:19-68
-activity#com.asad.sportsvaganza.Activities.Activity2_gamesList
+activity#com.asad.sportsvaganza.Activities.GamesListActivity
 ADDED from F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:16:9-68
 	android:name
 		ADDED from F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:16:19-65
-activity#com.asad.sportsvaganza.Activities.Activity_Splash
+activity#com.asad.sportsvaganza.Activities.SplashActivity
 ADDED from F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:17:9-23:20
 	android:name
 		ADDED from F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:17:19-61

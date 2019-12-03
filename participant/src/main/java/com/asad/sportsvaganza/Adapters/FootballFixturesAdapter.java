@@ -28,7 +28,7 @@ public class FootballFixturesAdapter extends RecyclerView.Adapter<FootballFixtur
     @Override
     public FootballFixturesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.listitem_football_fixtures, parent, false);
+        View view = inflater.inflate(R.layout.item_football_fixtures, parent, false);
         return new FootballFixturesViewHolder(view);
     }
 

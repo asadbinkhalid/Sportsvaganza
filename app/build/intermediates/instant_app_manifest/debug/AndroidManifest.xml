@@ -19,11 +19,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        <activity android:name="com.asad.sportsvaganza.Activities.Activity_Login_Main" />
-        <activity android:name="com.asad.sportsvaganza.Activities.Activity3_football_main" />
-        <activity android:name="com.asad.sportsvaganza.Activities.Activity3_cricket_main" />
-        <activity android:name="com.asad.sportsvaganza.Activities.Activity2_gamesList" />
-        <activity android:name="com.asad.sportsvaganza.Activities.Activity_Splash" >
+        <activity android:name="com.asad.sportsvaganza.Activities.LoginActivity" />
+        <activity android:name="com.asad.sportsvaganza.Activities.FootballMainActivity" />
+        <activity android:name="com.asad.sportsvaganza.Activities.CricketMainActivity" />
+        <activity android:name="com.asad.sportsvaganza.Activities.GamesListActivity" />
+        <activity android:name="com.asad.sportsvaganza.Activities.SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

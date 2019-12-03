@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cricket_tab_bg_trans"
-    tools:context=".Activities.Activity4_football_addMatch">
+    tools:context=".Activities.FootballAddMatchActivity">
 
     <TextView
         android:id="@+id/textView3"

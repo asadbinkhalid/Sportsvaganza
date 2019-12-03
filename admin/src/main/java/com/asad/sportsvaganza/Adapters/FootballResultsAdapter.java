@@ -29,7 +29,7 @@ public class FootballResultsAdapter extends RecyclerView.Adapter<FootballResults
     @Override
     public FootballResultsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.listitem_football_results, parent, false);
+        View view = inflater.inflate(R.layout.item_football_results, parent, false);
         return new FootballResultsViewHolder(view);
     }
 

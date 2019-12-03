@@ -13,7 +13,6 @@ import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.asad.businesslogic.Globals;
 import com.asad.businesslogic.Main;
 import com.asad.sportsvaganza.R;
 import com.example.roomdatabase.Api;
@@ -33,7 +32,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Activity_Login_Main extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
 
@@ -99,7 +98,7 @@ public class Activity_Login_Main extends AppCompatActivity {
                                         });
                                         Main.getInstance();
 
-                                        Intent intent = new Intent(Activity_Login_Main.this, Activity2_gamesList.class);
+                                        Intent intent = new Intent(LoginActivity.this, GamesListActivity.class);
                                         startActivity(intent);
                                     }
                                     else {

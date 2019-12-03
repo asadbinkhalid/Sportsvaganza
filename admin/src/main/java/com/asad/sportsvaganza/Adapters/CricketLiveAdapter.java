@@ -1,7 +1,6 @@
 package com.asad.sportsvaganza.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -15,11 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.businesslogic.CricketMatch;
-import com.asad.businesslogic.Globals;
-import com.asad.businesslogic.Main;
 import com.asad.businesslogic.Match;
-import com.asad.sportsvaganza.Activities.Activity3_cricket_main;
-import com.asad.sportsvaganza.Activities.Activity3_football_main;
+import com.asad.sportsvaganza.Activities.CricketMainActivity;
 import com.asad.sportsvaganza.R;
 
 import java.util.List;
@@ -38,7 +34,7 @@ public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.
     @Override
     public CricketLiveViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.listitem_cricket_live, parent, false);
+        View view = inflater.inflate(R.layout.item_cricket_live, parent, false);
         return new CricketLiveViewHolder(view);
     }
 
@@ -63,8 +59,8 @@ public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.
             public void afterTextChanged(Editable s) {
                 holder.mruns.setText(s.toString());
                 cricketLiveModelList.get(position).setTeam1Runs(Integer.parseInt(s.toString()));
-                ((Activity3_cricket_main) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
-                ((Activity3_cricket_main) context).refreshActivity();
+                ((CricketMainActivity) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
+                ((CricketMainActivity) context).refreshActivity();
             }
         });
 
@@ -76,48 +72,48 @@ public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.
             public void onClick(View v) {
                 cricketLiveModelList.get(position).setState(Match.ENDED);
 
-                ((Activity3_cricket_main) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
-                ((Activity3_cricket_main) context).refreshActivity();
+                ((CricketMainActivity) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
+                ((CricketMainActivity) context).refreshActivity();
             }
         });
         holder.addScoreButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 cricketLiveModelList.get(position).setTeam1Runs(cricketLiveModelList.get(position).getTeam1Runs() + 1);
 
-                ((Activity3_cricket_main) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
-                ((Activity3_cricket_main) context).refreshActivity();
+                ((CricketMainActivity) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
+                ((CricketMainActivity) context).refreshActivity();
             }
         });
         holder.subScoreButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 cricketLiveModelList.get(position).setTeam1Runs(cricketLiveModelList.get(position).getTeam1Runs() - 1);
 
-                ((Activity3_cricket_main) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
-                ((Activity3_cricket_main) context).refreshActivity();
+                ((CricketMainActivity) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
+                ((CricketMainActivity) context).refreshActivity();
             }
         });
         holder.addWicketsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 cricketLiveModelList.get(position).setWickets(cricketLiveModelList.get(position).getWickets() + 1);
 
-                ((Activity3_cricket_main) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
-                ((Activity3_cricket_main) context).refreshActivity();
+                ((CricketMainActivity) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
+                ((CricketMainActivity) context).refreshActivity();
             }
         });
         holder.subWicketsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 cricketLiveModelList.get(position).setWickets(cricketLiveModelList.get(position).getWickets() - 1);
 
-                ((Activity3_cricket_main) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
-                ((Activity3_cricket_main) context).refreshActivity();
+                ((CricketMainActivity) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
+                ((CricketMainActivity) context).refreshActivity();
             }
         });
         holder.addOversButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 cricketLiveModelList.get(position).setOvers(cricketLiveModelList.get(position).getOvers() + 1);
 
-                ((Activity3_cricket_main) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
-                ((Activity3_cricket_main) context).refreshActivity();
+                ((CricketMainActivity) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
+                ((CricketMainActivity) context).refreshActivity();
             }
         });
         holder.changeInningsButton.setOnClickListener(new View.OnClickListener(){
@@ -137,8 +133,8 @@ public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.
 
                     //holder.mtarget.setText(String.valueOf(cricketLiveModelList.get(position).getTeam1Runs()));
 
-                    ((Activity3_cricket_main) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
-                    ((Activity3_cricket_main) context).refreshActivity();
+                    ((CricketMainActivity) context).updateCricketMatchVIAService(cricketLiveModelList.get(position));
+                    ((CricketMainActivity) context).refreshActivity();
                 }
             }
         });

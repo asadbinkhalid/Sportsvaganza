@@ -11,11 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.businesslogic.FootballMatch;
-import com.asad.businesslogic.Main;
 import com.asad.businesslogic.Globals;
 import com.asad.businesslogic.Match;
-import com.asad.sportsvaganza.Activities.Activity3_cricket_main;
-import com.asad.sportsvaganza.Activities.Activity3_football_main;
+import com.asad.sportsvaganza.Activities.FootballMainActivity;
 import com.asad.sportsvaganza.R;
 
 import java.util.List;
@@ -34,7 +32,7 @@ public class FootballFixturesAdapter extends RecyclerView.Adapter<FootballFixtur
     @Override
     public FootballFixturesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.listitem_football_fixtures, parent, false);
+        View view = inflater.inflate(R.layout.item_football_fixtures, parent, false);
         return new FootballFixturesViewHolder(view);
     }
 
@@ -50,9 +48,9 @@ public class FootballFixturesAdapter extends RecyclerView.Adapter<FootballFixtur
             public void onClick(View v) {
                 footballFixturesModelList.get(position).setState(Match.LIVE);
 
-                ((Activity3_football_main) context).updateFootballMatchVIAService(footballFixturesModelList.get(position));
+                ((FootballMainActivity) context).updateFootballMatchVIAService(footballFixturesModelList.get(position));
                 //Main.getInstance().initiateFootballMatches();
-                ((Activity3_football_main) context).refreshActivity();
+                ((FootballMainActivity) context).refreshActivity();
                 //notifyItemChanged(position);
                 Globals.refresh = true;
             }

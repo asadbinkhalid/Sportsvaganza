@@ -8,11 +8,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.asad.businesslogic.CricketMatch;
+import com.asad.sportsvaganza.BackgroundServices.UpdateCricketMatchService;
 import com.asad.sportsvaganza.Fragments.CricketFixturesFragment;
 import com.asad.sportsvaganza.Fragments.CricketLiveFragment;
 
 import com.asad.sportsvaganza.Fragments.CricketResultsFragment;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.rhexgomez.typer.roboto.TyperRoboto;
@@ -27,13 +30,18 @@ import androidx.viewpager.widget.ViewPager;
 import java.util.Objects;
 
 
-public class Activity3_cricket_main extends AppCompatActivity {
+public class CricketMainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity3_cricket_scrollingtabs);
+        setContentView(R.layout.activity_cricket_main);
+
+//        if(!Globals.isLogin){
+//            this.onDestroy();
+//        }
+
         tabLayout = findViewById(R.id.tabs);
         Toolbar toolbar = findViewById(R.id.toolbarCricket);
         ViewPager mViewPager = findViewById(R.id.viewpager2);
@@ -47,7 +55,7 @@ public class Activity3_cricket_main extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Activity2_gamesList.class));
+                startActivity(new Intent(getApplicationContext(), GamesListActivity.class));
                 finish();
             }
         });
@@ -64,6 +72,14 @@ public class Activity3_cricket_main extends AppCompatActivity {
         mViewPager.setAdapter(mViewPagerAdapter);
         tabLayout.setupWithViewPager(mViewPager);
 
+        FloatingActionButton addmatchcricket = findViewById(R.id.cricket_add_match_button);
+        addmatchcricket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CricketMainActivity.this, CricketAddMatchActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -73,7 +89,6 @@ public class Activity3_cricket_main extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -84,16 +99,28 @@ public class Activity3_cricket_main extends AppCompatActivity {
         if (id == R.id.button_logout) {
             FirebaseAuth.getInstance().signOut();
 
-            Intent i = new Intent(this, Activity_Login_Main.class);
+            Intent i = new Intent(this, LoginActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             //Globals.isLogin = false;
             Toast.makeText(getApplicationContext(), "Logged Out!", Toast.LENGTH_LONG).show();
             finish();
-
 
             startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }
 
+    public void refreshActivity(){
+        finish();
+        overridePendingTransition(0, 0);
+        startActivity(getIntent());
+        overridePendingTransition(0, 0);
+    }
+
+    public void updateCricketMatchVIAService(CricketMatch obj){
+        Intent intent = new Intent(this, UpdateCricketMatchService.class);
+        intent.putExtra("cricketMatch", obj);
+
+        startService(intent);
+    }
 }

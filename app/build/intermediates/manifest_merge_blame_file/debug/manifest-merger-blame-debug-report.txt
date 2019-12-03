@@ -28,19 +28,19 @@
 19        android:testOnly="true"
 20        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
 20-->F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:11:9-65
-21        <activity android:name="com.asad.sportsvaganza.Activities.Activity_Login_Main" />
+21        <activity android:name="com.asad.sportsvaganza.Activities.LoginActivity" />
 21-->F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:12:9-68
 21-->F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:12:19-65
-22        <activity android:name="com.asad.sportsvaganza.Activities.Activity3_football_main" />
+22        <activity android:name="com.asad.sportsvaganza.Activities.FootballMainActivity" />
 22-->F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:14:9-72
 22-->F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:14:19-69
-23        <activity android:name="com.asad.sportsvaganza.Activities.Activity3_cricket_main" />
+23        <activity android:name="com.asad.sportsvaganza.Activities.CricketMainActivity" />
 23-->F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:15:9-71
 23-->F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:15:19-68
-24        <activity android:name="com.asad.sportsvaganza.Activities.Activity2_gamesList" />
+24        <activity android:name="com.asad.sportsvaganza.Activities.GamesListActivity" />
 24-->F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:16:9-68
 24-->F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:16:19-65
-25        <activity android:name="com.asad.sportsvaganza.Activities.Activity_Splash" >
+25        <activity android:name="com.asad.sportsvaganza.Activities.SplashActivity" >
 25-->F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:17:9-23:20
 25-->F:\Android Projects\Sportsvaganza\app\src\main\AndroidManifest.xml:17:19-61
 26            <intent-filter>

@@ -28,7 +28,7 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
     @Override
     public FootballLiveViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.listitem_football_live, parent, false);
+        View view = inflater.inflate(R.layout.item_football_live, parent, false);
         return new FootballLiveViewHolder(view);
     }
 

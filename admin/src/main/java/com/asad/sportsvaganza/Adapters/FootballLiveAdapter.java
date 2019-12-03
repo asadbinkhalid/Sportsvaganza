@@ -11,10 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.businesslogic.FootballMatch;
-import com.asad.businesslogic.Main;
 import com.asad.businesslogic.Globals;
 import com.asad.businesslogic.Match;
-import com.asad.sportsvaganza.Activities.Activity3_football_main;
+import com.asad.sportsvaganza.Activities.FootballMainActivity;
 import com.asad.sportsvaganza.R;
 
 import java.util.List;
@@ -33,7 +32,7 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
     @Override
     public FootballLiveViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.listitem_football_live, parent, false);
+        View view = inflater.inflate(R.layout.item_football_live, parent, false);
         return new FootballLiveViewHolder(view);
     }
 
@@ -58,9 +57,9 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
 //                }
 //                Main.getInstance().initiateFootballMatches();
 
-                ((Activity3_football_main) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
+                ((FootballMainActivity) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
                 //Main.getInstance().initiateFootballMatches();
-                ((Activity3_football_main) context).refreshActivity();
+                ((FootballMainActivity) context).refreshActivity();
 
                 //notifyItemChanged(position);
                 Globals.refresh = true;
@@ -71,9 +70,9 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
             public void onClick(View v) {
                 footballLiveModelList.get(position).setTeam1Score(footballLiveModelList.get(position).getTeam1Score() + 1);
 
-                ((Activity3_football_main) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
+                ((FootballMainActivity) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
                 //Main.getInstance().initiateFootballMatches();
-                ((Activity3_football_main) context).refreshActivity();
+                ((FootballMainActivity) context).refreshActivity();
 //                notifyItemChanged(position);
             }
         });
@@ -82,9 +81,9 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
             public void onClick(View v) {
                 footballLiveModelList.get(position).setTeam2Score(footballLiveModelList.get(position).getTeam2Score() + 1);
 
-                ((Activity3_football_main) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
+                ((FootballMainActivity) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
                 //Main.getInstance().initiateFootballMatches();
-                ((Activity3_football_main) context).refreshActivity();
+                ((FootballMainActivity) context).refreshActivity();
 //                notifyItemChanged(position);
             }
         });
@@ -93,9 +92,9 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
             public void onClick(View v) {
                 footballLiveModelList.get(position).setTeam1Score(footballLiveModelList.get(position).getTeam1Score() - 1);
 
-                ((Activity3_football_main) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
+                ((FootballMainActivity) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
                 //Main.getInstance().initiateFootballMatches();
-                ((Activity3_football_main) context).refreshActivity();
+                ((FootballMainActivity) context).refreshActivity();
 //                notifyItemChanged(position);
             }
         });
@@ -104,9 +103,9 @@ public class FootballLiveAdapter extends RecyclerView.Adapter<FootballLiveAdapte
             public void onClick(View v) {
                 footballLiveModelList.get(position).setTeam2Score(footballLiveModelList.get(position).getTeam2Score() - 1);
 
-                ((Activity3_football_main) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
+                ((FootballMainActivity) context).updateFootballMatchVIAService(footballLiveModelList.get(position));
                 //Main.getInstance().initiateFootballMatches();
-                ((Activity3_football_main) context).refreshActivity();
+                ((FootballMainActivity) context).refreshActivity();
 //                notifyItemChanged(position);
             }
         });

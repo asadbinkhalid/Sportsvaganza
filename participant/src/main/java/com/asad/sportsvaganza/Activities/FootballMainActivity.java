@@ -1,8 +1,6 @@
 package com.asad.sportsvaganza.Activities;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -28,13 +26,13 @@ import androidx.viewpager.widget.ViewPager;
 import java.util.Objects;
 
 
-public class Activity3_football_main extends AppCompatActivity {
+public class FootballMainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity3_football_scrollingtabs);
+        setContentView(R.layout.activity_football_main);
         tabLayout = findViewById(R.id.tabs);
         Toolbar toolbar = findViewById(R.id.toolbar1);
         ViewPager mViewPager = findViewById(R.id.viewpager1);
@@ -48,7 +46,7 @@ public class Activity3_football_main extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Activity2_gamesList.class));
+                startActivity(new Intent(getApplicationContext(), GamesListActivity.class));
                 finish();
             }
         });
@@ -84,7 +82,7 @@ public class Activity3_football_main extends AppCompatActivity {
         if (id == R.id.button_logout) {
             FirebaseAuth.getInstance().signOut();
 
-            Intent i = new Intent(this, Activity_Login_Main.class);
+            Intent i = new Intent(this, LoginActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             Toast.makeText(getApplicationContext(), "Logged Out!", Toast.LENGTH_LONG).show();
             //Globals.isLogin = false;

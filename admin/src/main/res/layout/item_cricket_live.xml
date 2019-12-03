@@ -231,12 +231,12 @@
 
     <Button
         android:id="@+id/button13"
-        android:layout_width="110dp"
-        android:layout_height="45dp"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/change_innings"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textSize="12sp"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="@+id/textView_live"
         app:layout_constraintHorizontal_bias="0.154"

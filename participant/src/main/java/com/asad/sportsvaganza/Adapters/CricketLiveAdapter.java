@@ -28,7 +28,7 @@ public class CricketLiveAdapter extends RecyclerView.Adapter<CricketLiveAdapter.
     @Override
     public CricketLiveViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.listitem_cricket_live, parent, false);
+        View view = inflater.inflate(R.layout.item_cricket_live, parent, false);
         return new CricketLiveViewHolder(view);
     }
 

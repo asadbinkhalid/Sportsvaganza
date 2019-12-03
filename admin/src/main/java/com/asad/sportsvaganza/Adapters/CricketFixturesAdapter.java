@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.asad.businesslogic.CricketMatch;
 import com.asad.businesslogic.Match;
-import com.asad.sportsvaganza.Activities.Activity3_cricket_main;
+import com.asad.sportsvaganza.Activities.CricketMainActivity;
 import com.asad.sportsvaganza.R;
 
 import java.util.List;
@@ -32,7 +32,7 @@ public class CricketFixturesAdapter extends RecyclerView.Adapter<CricketFixtures
     @Override
     public CricketFixturesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.listitem_cricket_fixtures, parent, false);
+        View view = inflater.inflate(R.layout.item_cricket_fixtures, parent, false);
         return new CricketFixturesViewHolder(view);
     }
 
@@ -48,9 +48,9 @@ public class CricketFixturesAdapter extends RecyclerView.Adapter<CricketFixtures
             public void onClick(View v) {
                 cricketFixturesModelList.get(position).setState(Match.LIVE);
 
-                ((Activity3_cricket_main) context).updateCricketMatchVIAService(cricketFixturesModelList.get(position));
+                ((CricketMainActivity) context).updateCricketMatchVIAService(cricketFixturesModelList.get(position));
 
-                ((Activity3_cricket_main) context).refreshActivity();
+                ((CricketMainActivity) context).refreshActivity();
                 //Main.getInstance().initiateFootballMatches();
 //                    Main.getInstance().updateCricketToLive(cricketFixturesModelList.get(position));
 //                    Main.getInstance().initiateCricketMatches();

@@ -7,8 +7,8 @@
 7    <!-- </application> -->
 8    <uses-sdk
 9        android:minSdkVersion="19"
-9-->F:\Android Projects\Sportsvaganza\roomdatabase\src\main\AndroidManifest.xml
+9-->D:\git\Sportsvaganza\roomdatabase\src\main\AndroidManifest.xml
 10        android:targetSdkVersion="29" />
-10-->F:\Android Projects\Sportsvaganza\roomdatabase\src\main\AndroidManifest.xml
+10-->D:\git\Sportsvaganza\roomdatabase\src\main\AndroidManifest.xml
 11
 12</manifest>
