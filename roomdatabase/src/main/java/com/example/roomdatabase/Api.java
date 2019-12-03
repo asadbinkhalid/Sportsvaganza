@@ -1,4 +1,4 @@
-package com.asad.sportsvaganza.Activities;
+package com.example.roomdatabase;
 
 import java.util.List;
 

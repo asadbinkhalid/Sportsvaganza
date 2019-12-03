@@ -16,6 +16,9 @@ import android.widget.Toast;
 import com.asad.businesslogic.Globals;
 import com.asad.businesslogic.Main;
 import com.asad.sportsvaganza.R;
+import com.example.roomdatabase.Api;
+import com.example.roomdatabase.Hero;
+import com.example.roomdatabase.MyDatabase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
@@ -78,9 +81,12 @@ public class Activity_Login_Main extends AppCompatActivity {
                                             @Override
                                             public void onResponse(Call<List<Hero>> call, Response<List<Hero>> response) {
 
+                                                MyDatabase myDb = MyDatabase.getInstance(getBaseContext());
+
                                                 List<Hero> heroList = response.body();
                                                 for (Hero h: heroList)
                                                 {
+                                                    myDb.mHeroDao().insert(h);
                                                     Log.d("name",h.getName());
                                                 }
 
