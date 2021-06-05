@@ -5,9 +5,6 @@ It is designed and developed in Android Studio using Java as the programming lan
 
 ## Features
 Supports two games as of now:
-- Cricket
-- Football
-
 - **Cricket**:
   - Match Schedule
   - Live Scores of ongoing matches
