@@ -24,4 +24,4 @@ Supports two games as of now:
   - Scores of ended matches
 
 ## Installation Inscturctions
-This application is not available on Google Playstore. It can only be installed by compiling the source code using Android Studio.
+This application is not available on Google Play Store. It can only be installed by compiling the source code using Android Studio.
