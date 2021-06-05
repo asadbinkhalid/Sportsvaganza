@@ -1,7 +1,7 @@
 # Sportsvaganza
 An android application for management and live scores of a sports tournament.
 
-It is designed and developed in Android Studio using Java as the programming language and XML for front-end
+It is designed and developed in Android Studio using Java as the programming language, XML for front-end, and is integrated with Google Firebase for real-time database support.
 
 ## Features
 Supports two games as of now:
