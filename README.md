@@ -8,15 +8,15 @@ Supports two games as of now:
 - Cricket
 - Football
 
-1. **Cricket**:
-  -- Match Schedule
-  -- Live Scores of ongoing matches
-    -- Remaining overs
-    -- Current runs
-    -- Remaining wickets
-  -- Scores of ended matches
+- **Cricket**:
+  - Match Schedule
+  - Live Scores of ongoing matches
+    - Remaining overs
+    - Current runs
+    - Remaining wickets
+  - Scores of ended matches
 
-2. **Football**:
+- **Football**:
   - Match Schedule
   - Live Scores of ongoing matches
     - Goals
