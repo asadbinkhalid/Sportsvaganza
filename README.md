@@ -9,12 +9,12 @@ Supports two games as of now:
 - Football
 
 1. **Cricket**:
-  - Match Schedule
-  - Live Scores of ongoing matches
-    - Remaining overs
-    - Current runs
-    - Remaining wickets
-  - Scores of ended matches
+  -- Match Schedule
+  -- Live Scores of ongoing matches
+    -- Remaining overs
+    -- Current runs
+    -- Remaining wickets
+  -- Scores of ended matches
 
 2. **Football**:
   - Match Schedule
