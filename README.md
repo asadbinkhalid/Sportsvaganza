@@ -1,5 +1,5 @@
 # Sportsvaganza
-An android application for management and live scores of a sports tournament.
+An android application for management and live scores of a sports tournament, originally developed for FAST Sports Gala 2020.
 
 It is designed and developed in Android Studio using Java as the programming language, XML for front-end, and is integrated with Google Firebase for real-time database support.
 
