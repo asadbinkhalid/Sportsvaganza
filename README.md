@@ -22,3 +22,16 @@ Supports two games as of now:
 
 ## Installation Inscturctions
 This application is not available on Google Play Store. It can only be installed by compiling the source code using Android Studio.
+
+## App Screenshots
+<p>
+  <img align="left" alt="a" src="https://github.com/asadbinkhalid/Sportsvaganza/blob/master/Login.jpeg">
+  <img align="center" alt="a" src="https://github.com/asadbinkhalid/Sportsvaganza/blob/master/Home.jpeg">
+</p>
+
+> ## Developed by:
+> 👤 **Asad Bin Khalid**
+> * Github: [@asadbinkhalid](https://github.com/asadbinkhalid)
+> 
+> 👤 **Khawaja Ahmad Hassan**
+> * Github: [@ikhawaja-hassan](https://github.com/ikhawaja-hassan)
