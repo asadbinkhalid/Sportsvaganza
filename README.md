@@ -25,8 +25,8 @@ This application is not available on Google Play Store. It can only be installed
 
 ## App Screenshots
 <p>
-  <img align="left" alt="a" src="https://github.com/asadbinkhalid/Sportsvaganza/blob/master/Login.jpeg">
-  <img align="center" alt="a" src="https://github.com/asadbinkhalid/Sportsvaganza/blob/master/Home.jpeg">
+  <img align="left" width="400" alt="a" src="https://github.com/asadbinkhalid/Sportsvaganza/blob/master/Login.jpeg">
+  <img align="center" width="400" alt="a" src="https://github.com/asadbinkhalid/Sportsvaganza/blob/master/Home.jpeg">
 </p>
 
 > ## Developed by:
